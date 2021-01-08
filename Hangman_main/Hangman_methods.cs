@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Hangman_main
 {
-    class Hangman_methods
+    class HangmanMethods
     {
         //This method switches between languages.
         public static void SwitchLanguage(int number, string message1, string message2, string message3)

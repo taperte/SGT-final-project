@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Hangman_main
 {
-    class Player : Hangman_methods
+    class Player : HangmanMethods
     {
         public int IDnumber { get; set; }
         public string Name { get; set; }

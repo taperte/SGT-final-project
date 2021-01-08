@@ -24,8 +24,9 @@ namespace Hangman_main
         }
 
         //This method creates a certain number of player objects and saves them to a list.
-        public static void CreatePlayers(List<Player> players, int number1, int number2, string message1, string message2, string message3)
+        public static void CreatePlayers(List<Player> players, int number1, int number2)
         {
+            string message1, message2, message3;
             for (int i = 0; i < number1; i++)
             {
                 //A player enters their name.
@@ -38,7 +39,7 @@ namespace Hangman_main
                 else
                 {
                     message1 = $"Player {i + 1}, please enter your name: ";
-                    message2 = $"{i + 1}. spēlētāj, lūdzu, ievadiet savu vārdu: ";
+                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadiet savu vārdu: ";
                     message3 = $"Игрок №{i + 1}, пожалуйста, введите своё имя: ";
                 }
                 SwitchLanguage(number2, message1, message2, message3);

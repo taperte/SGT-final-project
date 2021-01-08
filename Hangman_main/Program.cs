@@ -87,7 +87,7 @@ namespace Hangman_main
                     Hangman_methods.SwitchLanguage(language, english, latvian, russian);
                     continue;
                 }
-                if (playerCount < 1)
+                if (playerCount < 1 || playerCount > 11)
                 {
                     english = "Invalid number! "; latvian = "Nepareizs skaitlis! "; russian = "Неверное число! ";
                     Hangman_methods.SwitchLanguage(language, english, latvian, russian);
@@ -99,12 +99,12 @@ namespace Hangman_main
                 }
             }
             //5) The program creates player objects and saves them to the list.
-            Hangman_methods.CreatePlayers(players, playerCount, language, english, latvian, russian);
+            Hangman_methods.CreatePlayers(players, playerCount, language);
 
             //Šo nevajadzēs, tas ir tikai testēšanai.
             foreach (Player player in players)
             {
-                player.PrintPlayerInfo();
+                player.PrintPlayerInfo(language);
             }
         }
     }

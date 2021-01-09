@@ -14,6 +14,7 @@ namespace Hangman_main
             List<string> LVwords = File.ReadLines("C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\WordListLV_cleaned.txt").ToList();
             List<string> RUwords = File.ReadLines("C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\WordListRU_cleaned.txt").ToList();
             List<Player> players = new List<Player>();
+            List<string> previousGuesses = new List<string>();
             int language, level, playerCount;
             string english, latvian, russian;
 
@@ -100,6 +101,10 @@ namespace Hangman_main
             }
             //5) The program creates player objects and saves them to the list.
             HangmanMethods.CreatePlayers(players, playerCount, language);
+
+            //6) The program chooses secret word from one of the word lists.
+
+
             Player currentPlayer = players[0];
 
             //Šo nevajadzēs, tas ir tikai testēšanai.

@@ -12,9 +12,9 @@ namespace method_for_hangman
         {
             List<string> list1 = new List<string> { "skapis", "putra", "lielveikals", "pīle" };
             List<string> list2 = new List<string> { "приговор", "язык", "машина" };
-            List<string> list3 = new List<string> { "sheep", "goat", "computer", "america", "chase", "paste" };
+            List<string> list3 = new List<string> { "sheep", "goat", "computer", "america", "chase", "paste", "programming" };
             Console.OutputEncoding = System.Text.Encoding.Unicode;
-            string word = ChooseWordToGuess(list1, list2, list3, 3, 3);
+            string word = ChooseWordToGuess(list1, list2, list3, 1, 1);
             Console.WriteLine(word);
 
 
@@ -53,7 +53,6 @@ namespace method_for_hangman
                     }
                     if (number2 == 3)
                     {
-                        if (wordToGuess.Length < 7)
                         {
                             return wordToGuess;
                         }

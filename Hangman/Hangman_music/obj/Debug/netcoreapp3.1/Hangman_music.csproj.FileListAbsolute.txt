@@ -1,0 +1,13 @@
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\bin\Debug\netcoreapp3.1\Hangman_music.exe
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\bin\Debug\netcoreapp3.1\Hangman_music.deps.json
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\bin\Debug\netcoreapp3.1\Hangman_music.runtimeconfig.json
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\bin\Debug\netcoreapp3.1\Hangman_music.runtimeconfig.dev.json
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\bin\Debug\netcoreapp3.1\Hangman_music.dll
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\bin\Debug\netcoreapp3.1\Hangman_music.pdb
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\obj\Debug\netcoreapp3.1\Hangman_music.csprojAssemblyReference.cache
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\obj\Debug\netcoreapp3.1\Hangman_music.AssemblyInfoInputs.cache
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\obj\Debug\netcoreapp3.1\Hangman_music.AssemblyInfo.cs
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\obj\Debug\netcoreapp3.1\Hangman_music.csproj.CoreCompileInputs.cache
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\obj\Debug\netcoreapp3.1\Hangman_music.dll
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\obj\Debug\netcoreapp3.1\Hangman_music.pdb
+C:\Users\''Dell''\source\repos\Hangman\Hangman_music\obj\Debug\netcoreapp3.1\Hangman_music.genruntimeconfig.cache

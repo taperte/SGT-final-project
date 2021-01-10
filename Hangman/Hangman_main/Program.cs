@@ -125,7 +125,22 @@ namespace Hangman_main
             {
                 //8.1) The program prints the progress array.
                 HangmanMethods.ShowProgress(progress);
-                //...
+                //8.2) Spēlētājs ievada minējumu
+                //8.3) Validācija(ievada empty string, ievada kaut ko, kas nav 1 burts un pēc garuma nesakrīt ar minamo vārdu-- programma paziņo par kļūdu)
+                //8.4) Ja minējums derīgs, tas tiek saglabāts sarakstā
+                //8.5) Pārbauda, vai minējums jau ir bijis, -- tas ir gatavs.
+                //8.6) Ja spēlētājs ir ievadījis 1 burtu:
+                //programma pārbauda, vai šāds burts ir vārdā. Ja ir, apdeito progress array un nodrukā paziņojumu.
+                //Atkal piedāvā ievadīt minējumu. 
+                //Ja šāda burta nav, tad pieskaita vienu punktu pie spēlētāja zaudējumu skaitītāja,
+                //nodrukā paziņojumu un apdeito karātavas un nodrukā karātavas.
+                //8.7) Ja skaitītājs == 7, spēlētājs ir zaudējis.gameFinished == true + paziņojums par zaudējumu,
+                //!!! kaut kas foršs ar karātavām
+                //8.8) Ja inputs sakrīt ar minamo vārdu, gameFinished == true, spēle ir beigusies,
+                //paziņojums par uzvaru, !!!! kaut kas foršs ar karātavām
+                //8.9) Ja spēlētajs nospiež Esc, iziet no spēles.
+                //Programma jautā, vai sākt jaunu spēli vai iziet pavisam
+
             }
         }
     }

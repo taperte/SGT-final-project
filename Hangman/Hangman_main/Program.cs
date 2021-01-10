@@ -110,7 +110,7 @@ namespace Hangman_main
 
             //6) The program chooses secret word from one of the word lists and saves it to a variable.
             //...
-            string wordToGuess = "house";
+            string wordToGuess = HangmanMethods.ChooseWordToGuess(ENwords, LVwords, RUwords, language, level);
             english = "The game begins!"; latvian = "Spēle ir sākusies!"; russian = "Игра начинается!";
             HangmanMethods.SwitchLanguage(language, english, latvian, russian);
             Console.WriteLine();

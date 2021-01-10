@@ -141,6 +141,52 @@ namespace Hangman_main
             }
         }
 
+        //This method chooses the secret word from the word lists.
+        public static string ChooseWordToGuess(List<string> list1, List<string> list2, List<string> list3, int number1, int number2)
+        {
+            //The program selects the list to choose from according to player's choice of language.
+            List<string> listToChooseFrom = new List<string>();
+            if (number1 == 1)
+            {
+                listToChooseFrom = list1;
+            }
+            else if (number1 == 2)
+            {
+                listToChooseFrom = list2;
+            }
+            else if (number1 == 3)
+            {
+                listToChooseFrom = list3;
+            }
+            //Then selects a word according to player's choice of level.
+            while (true)
+            {
+                Random random = new Random();
+                string wordToGuess = listToChooseFrom[random.Next(listToChooseFrom.Count)];
+                if (number2 == 1)
+                {
+                    if (wordToGuess.Length <= 5)
+                    {
+                        return wordToGuess;
+                    }
+                }
+                else if (number2 == 2)
+                {
+                    if (5 < wordToGuess.Length && wordToGuess.Length <= 7)
+                    {
+                        return wordToGuess;
+                    }
+                }
+                else if (number2 == 3)
+                {
+                    if (wordToGuess.Length > 7)
+                    {
+                        return wordToGuess;
+                    }
+                }
+            }
+        }
+
         //This method receives a string value, creates a string array with the size == string.Length
         //and fills it with "_ ". If there is a hyphen in the string value, the spot in the array 
         //with the corresponding index is filled with a hyphen, too.

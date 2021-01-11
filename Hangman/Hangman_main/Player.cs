@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace Hangman_main
 {
-    class Player : HangmanMethods
+    class Player : HangmanMusic
     {
         public int IDnumber { get; set; }
         public string Name { get; set; }
@@ -31,7 +31,7 @@ namespace Hangman_main
                     message2 = $"{i + 1}. spēlētājs, lūdzu, ievadiet savu vārdu: ";
                     message3 = $"Игрок №{i + 1}, пожалуйста, введите своё имя: ";
                 }
-                SwitchLanguage(number2, message1, message2, message3);
+                HangmanMethods.SwitchLanguage(number2, message1, message2, message3);
                 string input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
@@ -44,7 +44,7 @@ namespace Hangman_main
                     IDnumber = i + 1,
                     Name = input,
                     IncorrectGuessCount = 0,
-                    Hangman = CreateHangmanImage(),
+                    Hangman = HangmanMethods.CreateHangmanImage(),
                 };
                 //A color is assigned to the player.
                 player.ChooseColor(players);
@@ -59,7 +59,7 @@ namespace Hangman_main
             string message1 = $"Good luck, {Name}!";
             string message2 = $"Veiksmi spēlē, {Name}!";
             string message3 = $"Удачи в игре, {Name}!";
-            SwitchLanguage(number, message1, message2, message3);
+            HangmanMethods.SwitchLanguage(number, message1, message2, message3);
             Console.WriteLine();
         }
 
@@ -160,25 +160,25 @@ namespace Hangman_main
             {
                 PrintHangmanImage((ConsoleColor)colornumbers[i]);
                 Console.ResetColor();
-                Console.Beep(HangmanMusic.NoteFrequency(Note.G4), HangmanMusic.NoteDuration(8));
+                Console.Beep(NoteFrequency(Note.G4), NoteDuration(8));
                 Console.Clear();
             }
             PrintHangmanImage((ConsoleColor)colornumbers[3]);
             Console.ResetColor();
-            Console.Beep(HangmanMusic.NoteFrequency(Note.E4), HangmanMusic.NoteDuration(2));
-            Thread.Sleep(HangmanMusic.NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.E4), NoteDuration(2));
+            Thread.Sleep(NoteDuration(8));
             Console.Clear();
             for (int i = 0; i < 3; i++)
             {
                 PrintHangmanImage((ConsoleColor)colornumbers[i + 4]);
                 Console.ResetColor();
-                Console.Beep(HangmanMusic.NoteFrequency(Note.F4), HangmanMusic.NoteDuration(8));
+                Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
                 Console.Clear();
             }
             //The last image is printed in player's color.
             PrintHangmanImage(Color);
             Console.ResetColor();
-            Console.Beep(HangmanMusic.NoteFrequency(Note.D4), HangmanMusic.NoteDuration(2));
+            Console.Beep(NoteFrequency(Note.D4), NoteDuration(2));
         }
 
         //This method creates an integer array of a given size 

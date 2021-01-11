@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Hangman_main
 {
@@ -20,46 +19,6 @@ namespace Hangman_main
                 default:
                     Console.Write(message3);
                     break;
-            }
-        }
-
-        //This method creates a certain number of player objects and saves them to a list.
-        public static void CreatePlayers(List<Player> players, int number1, int number2)
-        {
-            string message1, message2, message3;
-            for (int i = 0; i < number1; i++)
-            {
-                //A player enters their name.
-                if (number1 == 1)
-                {
-                    message1 = "Please enter your name: ";
-                    message2 = "Lūdzu, ievadiet savu vārdu: ";
-                    message3 = "Пожалуйста, введите своё имя: ";
-                }
-                else
-                {
-                    message1 = $"Player {i + 1}, please enter your name: ";
-                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadiet savu vārdu: ";
-                    message3 = $"Игрок №{i + 1}, пожалуйста, введите своё имя: ";
-                }
-                SwitchLanguage(number2, message1, message2, message3);
-                string input = Console.ReadLine();
-                if (string.IsNullOrEmpty(input))
-                {
-                    Console.Write("Invalid input! ");
-                    continue;
-                }
-                //A player class object is created.
-                Player player = new Player()
-                {
-                    IDnumber = i + 1,
-                    Name = input,
-                    IncorrectGuessCount = 0,
-                    Hangman = CreateHangmanImage(),
-                    Color = ChooseColor(players)
-                };
-                //The object is added to a list.
-                players.Add(player);
             }
         }
 
@@ -100,45 +59,6 @@ namespace Hangman_main
                 }
             }
             return hangman;
-        }
-
-        //This method chooses a random color from the ConsoleColor enum
-        //to assign to a player object property.
-        public static ConsoleColor ChooseColor(List<Player> players)
-        {
-            int repititions = 0;
-            while (true)
-            {
-                //The program generates a random number from 0 to 14 (no white color).
-                Random rand = new Random();
-                int randomNumber = rand.Next(15);
-                //If it equals the index of black, dark blue, gray or dark gray,
-                //the program exits current loop iteration.
-                if (randomNumber == 0 || randomNumber == 1 || randomNumber == 7 || randomNumber == 8)
-                {
-                    continue;
-                }
-                //When a proper number is generated, the program checks
-                //whether the corresponding color was assiged to a previous player already.
-                for (int i = 0; i < players.Count; i++)
-                {
-                    //If random number equals the index of an existing color from players' list,
-                    if (randomNumber == (int)players[i].Color)
-                    {
-                        //the counter adds 1.
-                        repititions++;
-                    }
-                }
-                //If there are no matches,
-                if (repititions == 0)
-                {
-                    //the new color is assigned and the program exits the loop.
-                    ConsoleColor color = (ConsoleColor)randomNumber;
-                    return color;
-                }
-                //At the end of iteration, the repitition counter value is restored to 0.
-                repititions = 0;
-            }
         }
 
         //This method chooses the secret word from the word lists.

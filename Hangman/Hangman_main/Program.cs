@@ -19,7 +19,7 @@ namespace Hangman_main
             bool gameFinished = false;
 
             //Change default output encoding to Unicode,
-            //so that Latvian text would be displayed correctly in console.
+            //so that Latvian and Russian text would be displayed correctly in console.
             Console.OutputEncoding = System.Text.Encoding.Unicode;
 
             //1) Player(s) choose(s) language.
@@ -100,18 +100,11 @@ namespace Hangman_main
                 }
             }
             //5) The program creates player objects and saves them to the list.
-            HangmanMethods.CreatePlayers(players, playerCount, language);
-
-            //Šo nevajadzēs, tas ir tikai testēšanai.
-            foreach (Player player in players)
-            {
-                player.PrintPlayerInfo(language);
-            }
+            Player.AddPlayers(players, playerCount, language);
 
             //6) The program chooses secret word from one of the word lists and saves it to a variable.
-            //...
             string wordToGuess = HangmanMethods.ChooseWordToGuess(ENwords, LVwords, RUwords, language, level);
-            english = "The game begins!"; latvian = "Spēle ir sākusies!"; russian = "Игра начинается!";
+            english = "The game is on!"; latvian = "Sākam spēli!"; russian = "Начинаем игру!";
             HangmanMethods.SwitchLanguage(language, english, latvian, russian);
             Console.WriteLine();
 

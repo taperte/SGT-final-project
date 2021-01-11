@@ -128,6 +128,7 @@ namespace Hangman_main
                 //Ja šāda burta nav, tad pieskaita vienu punktu pie spēlētāja zaudējumu skaitītāja,
                 //nodrukā paziņojumu un apdeito karātavas un nodrukā karātavas.
                 //9.6) Kad gājiens izdarīts, nodrukā apdeitotu progress array.
+                HangmanMethods.ShowProgress(progress);
                 //9.7) Ja skaitītājs == 7, spēlētājs ir zaudējis.gameFinished == true + paziņojums par zaudējumu,
                 //!!! kaut kas foršs ar karātavām
                 //9.8) Ja inputs sakrīt ar minamo vārdu, gameFinished == true, spēle ir beigusies,

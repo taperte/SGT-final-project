@@ -112,25 +112,27 @@ namespace Hangman_main
             //7) Progress array is created.
             string[] progress = HangmanMethods.CreateProgressArray(wordToGuess);
 
-            //8) The game begins.
-            while (gameFinished)
+            //8) The program prints the progress array.
+            HangmanMethods.ShowProgress(progress);
+
+            //9) The game begins.
+            while (!gameFinished)
             {
-                //8.1) The program prints the progress array.
-                HangmanMethods.ShowProgress(progress);
-                //8.2) Spēlētājs ievada minējumu
-                //8.3) Validācija(ievada empty string, ievada kaut ko, kas nav 1 burts un pēc garuma nesakrīt ar minamo vārdu-- programma paziņo par kļūdu)
-                //8.4) Ja minējums derīgs, tas tiek saglabāts sarakstā
-                //8.5) Pārbauda, vai minējums jau ir bijis, -- tas ir gatavs.
-                //8.6) Ja spēlētājs ir ievadījis 1 burtu:
+                //9.1) Spēlētājs ievada minējumu
+                //9.2) Validācija(ievada empty string, ievada kaut ko, kas nav 1 burts un pēc garuma nesakrīt ar minamo vārdu-- programma paziņo par kļūdu)
+                //9.3) Ja minējums derīgs, tas tiek saglabāts sarakstā
+                //9.4) Pārbauda, vai minējums jau ir bijis, -- tas ir gatavs.
+                //9.5) Ja spēlētājs ir ievadījis 1 burtu:
                 //programma pārbauda, vai šāds burts ir vārdā. Ja ir, apdeito progress array un nodrukā paziņojumu.
                 //Atkal piedāvā ievadīt minējumu. 
                 //Ja šāda burta nav, tad pieskaita vienu punktu pie spēlētāja zaudējumu skaitītāja,
                 //nodrukā paziņojumu un apdeito karātavas un nodrukā karātavas.
-                //8.7) Ja skaitītājs == 7, spēlētājs ir zaudējis.gameFinished == true + paziņojums par zaudējumu,
+                //9.6) Kad gājiens izdarīts, nodrukā apdeitotu progress array.
+                //9.7) Ja skaitītājs == 7, spēlētājs ir zaudējis.gameFinished == true + paziņojums par zaudējumu,
                 //!!! kaut kas foršs ar karātavām
-                //8.8) Ja inputs sakrīt ar minamo vārdu, gameFinished == true, spēle ir beigusies,
+                //9.8) Ja inputs sakrīt ar minamo vārdu, gameFinished == true, spēle ir beigusies,
                 //paziņojums par uzvaru, !!!! kaut kas foršs ar karātavām
-                //8.9) Ja spēlētajs nospiež Esc, iziet no spēles.
+                //9.9) Ja spēlētajs nospiež Esc, iziet no spēles.
                 //Programma jautā, vai sākt jaunu spēli vai iziet pavisam
 
             }

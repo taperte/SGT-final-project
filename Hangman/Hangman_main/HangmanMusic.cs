@@ -5,7 +5,7 @@ namespace Hangman_main
 {
     class HangmanMusic
     {
-        public static void CorrectGuess()
+        public static void CorrectGuessMusic()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -30,7 +30,7 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.D4), NoteDuration());
         }
 
-        public static void IncorrectGuess()
+        public static void IncorrectGuessMusic()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -45,7 +45,7 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.D4), NoteDuration(2));
         }
 
-        public static void Loss()
+        public static void LossMusic()
         {
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(4));
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(8, 1));
@@ -60,7 +60,7 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(2));
         }
 
-        public static void Victory()
+        public static void VictoryMusic()
         {
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(2));
@@ -111,7 +111,7 @@ namespace Hangman_main
         //This method calculates note frequecy; parameter: note enum value.
         //f(n) = 440 * 2^((n - 69)/12), where n is note's number
         //in MIDI (Musical Instrument Digital Interface) standard.
-        static int NoteFrequency(Note note)
+        public static int NoteFrequency(Note note)
         {
             //The note enum starts with A0, its MIDI number is 21,
             //so in order to get note's MIDI number, its enum index has to be increased by 21. 
@@ -124,7 +124,7 @@ namespace Hangman_main
         //This method calculates note duration;
         //parameters: note value denominator (e.g. note value is 1/8, the parameter is 8),
         //dot modifier, multiplier (for double whole note, longa or maxima).
-        static int NoteDuration(int denominator = 1, int dot = 0, int multiplier = 1)
+        public static int NoteDuration(int denominator = 1, int dot = 0, int multiplier = 1)
         {
             int wholeNote = 2000;
             int duration = multiplier * wholeNote / denominator;

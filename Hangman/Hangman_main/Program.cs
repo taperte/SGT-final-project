@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Threading;
 
 namespace Hangman_main
 {
@@ -111,10 +112,8 @@ namespace Hangman_main
             //7) Progress array is created.
             string[] progress = HangmanMethods.CreateProgressArray(wordToGuess);
 
-            Player currentPlayer = players[0];
-
             //8) The game begins.
-            while (!gameFinished)
+            while (gameFinished)
             {
                 //8.1) The program prints the progress array.
                 HangmanMethods.ShowProgress(progress);

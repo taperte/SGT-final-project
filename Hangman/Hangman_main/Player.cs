@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Hangman_main
 {
@@ -53,7 +54,7 @@ namespace Hangman_main
             }
         }
 
-        public void PrintGreeting(int number)
+        private void PrintGreeting(int number)
         {
             string message1 = $"Good luck, {Name}!";
             string message2 = $"Veiksmi spēlē, {Name}!";
@@ -69,12 +70,11 @@ namespace Hangman_main
             int repititions = 0;
             while (true)
             {
-                //The program generates a random number from 0 to 14 (no white color).
+                //The program generates a random number from 2 to 14 (no, black, dark blue or white color).
                 Random rand = new Random();
-                int randomNumber = rand.Next(15);
-                //If it equals the index of black, dark blue, gray or dark gray,
-                //the program exits current loop iteration.
-                if (randomNumber == 0 || randomNumber == 1 || randomNumber == 7 || randomNumber == 8)
+                int randomNumber = rand.Next(2, 15);
+                //If it equals the index of gray or dark gray, the program exits current loop iteration.
+                if (randomNumber == 7 || randomNumber == 8)
                 {
                     continue;
                 }
@@ -82,7 +82,7 @@ namespace Hangman_main
                 //whether the corresponding color was assiged to a previous player already.
                 for (int i = 0; i < players.Count; i++)
                 {
-                    //If random number equals the index of an existing color from players' list,
+                    //If random number equals the index of an existing color from player list,
                     if (randomNumber == (int)players[i].Color)
                     {
                         //the counter adds 1.
@@ -134,10 +134,10 @@ namespace Hangman_main
             }
         }
 
-        //This method prints a hangman image.
-        public void PrintHangmanImage()
+        //This method prints a hangman image in a given color.
+        public void PrintHangmanImage(ConsoleColor color)
         {
-            Console.ForegroundColor = Color;
+            Console.ForegroundColor = color;
             for (int row = 0; row < Hangman.GetLength(0); row++)
             {
                 for (int column = 0; column < Hangman.GetLength(1); column++)
@@ -148,6 +148,60 @@ namespace Hangman_main
             }
             Console.ResetColor();
             Console.WriteLine();
+        }
+
+        //This method prints player's hangman image update after icorrect guess.
+        public void IncorrecGuess()
+        {
+            //An int array is created; the integers in the array will be used
+            //as ConsoleColor value indices.
+            int[] colornumbers = ArrayWithRandomNumbers(7);
+            for (int i = 0; i < 3; i++)
+            {
+                PrintHangmanImage((ConsoleColor)colornumbers[i]);
+                Console.ResetColor();
+                Console.Beep(HangmanMusic.NoteFrequency(Note.G4), HangmanMusic.NoteDuration(8));
+                Console.Clear();
+            }
+            PrintHangmanImage((ConsoleColor)colornumbers[3]);
+            Console.ResetColor();
+            Console.Beep(HangmanMusic.NoteFrequency(Note.E4), HangmanMusic.NoteDuration(2));
+            Thread.Sleep(HangmanMusic.NoteDuration(8));
+            Console.Clear();
+            for (int i = 0; i < 3; i++)
+            {
+                PrintHangmanImage((ConsoleColor)colornumbers[i + 4]);
+                Console.ResetColor();
+                Console.Beep(HangmanMusic.NoteFrequency(Note.F4), HangmanMusic.NoteDuration(8));
+                Console.Clear();
+            }
+            //The last image is printed in player's color.
+            PrintHangmanImage(Color);
+            Console.ResetColor();
+            Console.Beep(HangmanMusic.NoteFrequency(Note.D4), HangmanMusic.NoteDuration(2));
+        }
+
+        //This method creates an integer array of a given size 
+        //and fills it with random numbers from 2 to 14;
+        //the same number can be generated more than once, but not in a row.
+        private static int[] ArrayWithRandomNumbers(int number)
+        {
+            int[] someArray = new int[number];
+            for (int i = 0; i < someArray.Length;)
+            {
+                Random rand = new Random();
+                int randomNumber = rand.Next(2, 15);
+                if (randomNumber == 7 || randomNumber == 8)
+                {
+                    continue;
+                }
+                if (i == 0 || randomNumber != someArray[i - 1])
+                {
+                    someArray[i] = randomNumber;
+                    i++;
+                }
+            }
+            return someArray;
         }
     }
 }

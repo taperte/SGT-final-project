@@ -129,28 +129,27 @@ namespace Hangman_music
                 }
             }
 
-            //This method receives an empty integer array 
-            //and fills it with unique random numbers from 0 to 15.
+            //This method creates an integer array of a given size 
+            //and fills it with random numbers from 2 to 14;
+            //the same number can be generated more than once, but not in a row.
             static int[] ArrayWithRandomNumbers(int number)
             {
-                int[] somearray = new int[number];
-                int numbercounter = 0;
-                while (numbercounter < somearray.Length)
+                int[] someArray = new int[number];
+                for (int i = 0; i < someArray.Length;)
                 {
                     Random rand = new Random();
-                    int randomnumber = rand.Next(15);
-                    if (randomnumber == 0 && randomnumber == 1 && randomnumber == 7 && randomnumber == 8)
+                    int randomNumber = rand.Next(2, 15);
+                    if (randomNumber == 7 || randomNumber == 8)
                     {
                         continue;
                     }
-                    //The program assigns the first number and exits the first loop iteration.
-                    else if (numbercounter == 0 || randomnumber != somearray[numbercounter - 1])
+                    if (i == 0 || randomNumber != someArray[i - 1])
                     {
-                        somearray[numbercounter] = randomnumber;
-                        numbercounter++;
+                        someArray[i] = randomNumber;
+                        i++;
                     }
                 }
-                return somearray;
+                return someArray;
             }
         }
     }

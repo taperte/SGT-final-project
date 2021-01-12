@@ -16,7 +16,7 @@ namespace Hangman_main
         public static void AddPlayers(List<Player> players, int number1, int number2)
         {
             string message1, message2, message3;
-            for (int i = 0; i < number1; i++)
+            for (int i = 0; i < number1;)
             {
                 //A player enters their name.
                 if (number1 == 1)
@@ -31,7 +31,7 @@ namespace Hangman_main
                     message2 = $"{i + 1}. spēlētājs, lūdzu, ievadiet savu vārdu: ";
                     message3 = $"Игрок №{i + 1}, пожалуйста, введите своё имя: ";
                 }
-                HangmanMethods.SwitchLanguage(number2, message1, message2, message3);
+                Console.Write(HangmanMethods.SwitchLanguage(number2, message1, message2, message3));
                 string input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
@@ -51,6 +51,7 @@ namespace Hangman_main
                 //The program prints greeting for the player and adds them to the list.
                 player.PrintGreeting(number1);
                 players.Add(player);
+                i++;
             }
         }
 
@@ -60,8 +61,7 @@ namespace Hangman_main
             string message1 = $"Good luck, {Name}!";
             string message2 = $"Veiksmi spēlē, {Name}!";
             string message3 = $"Удачи в игре, {Name}!";
-            HangmanMethods.SwitchLanguage(number, message1, message2, message3);
-            Console.WriteLine();
+            Console.WriteLine(HangmanMethods.SwitchLanguage(number, message1, message2, message3));
         }
 
         //This method chooses a random color from the ConsoleColor enum
@@ -135,7 +135,7 @@ namespace Hangman_main
             }
         }
 
-        //This method prints a hangman image in a given color.
+        //This method prints player's hangman image in a given color.
         public void PrintHangmanImage(ConsoleColor color)
         {
             Console.ForegroundColor = color;
@@ -152,11 +152,11 @@ namespace Hangman_main
         }
 
         //This method prints player's hangman image update after icorrect guess.
-        public void IncorrecGuess()
+        public void IncorrectGuess()
         {
             //An integer array is created; the integers in the array will be used
             //as ConsoleColor value indices.
-            int[] colorNumbers = ArrayWithRandomNumbers(7);
+            int[] colorNumbers = HangmanMethods.ArrayWithRandomNumbers(7);
             for (int i = 0; i < 3; i++)
             {
                 PrintHangmanImage((ConsoleColor)colorNumbers[i]);
@@ -182,27 +182,41 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.D4), NoteDuration(2));
         }
 
-        //This method creates an integer array of a given size 
-        //and fills it with random numbers from 2 to 14;
-        //the same number can be generated more than once, but not in a row.
-        private static int[] ArrayWithRandomNumbers(int number)
+
+        //This method shows how a hangman image gets updated in the course of the game.
+        public void BuildHangmanImage()
         {
-            int[] someArray = new int[number];
-            for (int i = 0; i < someArray.Length;)
+            for (IncorrectGuessCount = 0; IncorrectGuessCount < 8; IncorrectGuessCount++)
             {
-                Random rand = new Random();
-                int randomNumber = rand.Next(2, 15);
-                if (randomNumber == 7 || randomNumber == 8)
+                if (IncorrectGuessCount == 0)
                 {
-                    continue;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("0 incorrect guesses:");
+                    Console.ResetColor();
+                    Hangman = HangmanMethods.CreateHangmanImage();
                 }
-                if (i == 0 || randomNumber != someArray[i - 1])
+                else
                 {
-                    someArray[i] = randomNumber;
-                    i++;
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    if (IncorrectGuessCount == 1)
+                    {
+                        Console.WriteLine($"{IncorrectGuessCount} incorrect guess:");
+                    }
+                    else if (IncorrectGuessCount != 7)
+                    {
+                        Console.WriteLine($"{IncorrectGuessCount} incorrect guesses:");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{IncorrectGuessCount} incorrect guesses — you've lost!");
+                    }
+                    Console.ResetColor();
+                    UpdateHangmanImage();
                 }
+                PrintHangmanImage(ConsoleColor.Gray);
+                Thread.Sleep(1500);
+                Console.Clear();
             }
-            return someArray;
         }
     }
 }

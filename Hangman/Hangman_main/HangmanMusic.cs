@@ -5,6 +5,58 @@ namespace Hangman_main
 {
     class HangmanMusic
     {
+        public static void TheGameIsOn()
+        {
+            //The game is on
+            int[] randomNumbers = HangmanMethods.ArrayWithRandomNumbers(21);
+            int j = 0;
+            for (int i = 0; i < 40; i += 2)
+            {
+                Console.SetCursorPosition(i, j);
+                Console.BackgroundColor = (ConsoleColor)randomNumbers[j];
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("The game is on!");
+                Console.ResetColor();
+                if (i % 4 == 0 || i == 38)
+                {
+                    Thread.Sleep(100);
+                    Console.Clear();
+                }
+                j++;
+            }
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(4, 1));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(16, 1));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(4) + NoteDuration(4) / 2);
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(16));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            Thread.Sleep(NoteDuration(4));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(4));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8, 1));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A4), NoteDuration(4) + NoteDuration(4) / 2);
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            HangmanMethods.CenteredTextInColor("The game is on!", 3, randomNumbers.Length);
+        }
+
         public static void CorrectGuessMusic()
         {
             for (int i = 0; i < 3; i++)

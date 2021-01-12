@@ -6,20 +6,14 @@ namespace Hangman_main
     class HangmanMethods
     {
         //This method switches between languages.
-        public static void SwitchLanguage(int number, string message1, string message2, string message3)
+        public static string SwitchLanguage(int number, string message1, string message2, string message3)
         {
-            switch (number)
+            return number switch
             {
-                case 1:
-                    Console.Write(message1);
-                    break;
-                case 2:
-                    Console.Write(message2);
-                    break;
-                default:
-                    Console.Write(message3);
-                    break;
-            }
+                1 => message1,
+                2 => message2,
+                _ => message3,
+            };
         }
 
         //This method creates an initial hangman image. 
@@ -151,6 +145,45 @@ namespace Hangman_main
             }
             Console.WriteLine();
             Console.WriteLine();
+        }
+
+        //This method creates an integer array of a given size 
+        //and fills it with random numbers from 2 to 14;
+        //the same number can be generated more than once, but not in a row.
+        public static int[] ArrayWithRandomNumbers(int number)
+        {
+            int[] someArray = new int[number];
+            for (int i = 0; i < someArray.Length;)
+            {
+                Random rand = new Random();
+                int randomNumber = rand.Next(2, 15);
+                if (randomNumber == 7 || randomNumber == 8)
+                {
+                    continue;
+                }
+                if (i == 0 || randomNumber != someArray[i - 1])
+                {
+                    someArray[i] = randomNumber;
+                    i++;
+                }
+            }
+            return someArray;
+        }
+
+        //This method prints centered text in a random color on a certain line.
+        public static void CenteredTextInColor(string message, int number1, int number2)
+        {
+            Random rand = new Random();
+            Console.SetCursorPosition(0, number1);
+            Console.ForegroundColor = (ConsoleColor)ArrayWithRandomNumbers(number2)[rand.Next(number2)];
+            CenterText(message);
+            Console.ResetColor();
+        }
+
+        public static void CenterText(string text)
+        {
+            Console.Write(new string(' ', (Console.WindowWidth - text.Length) / 2));
+            Console.WriteLine(text);
         }
     }
 }

@@ -7,11 +7,64 @@ namespace Hangman_music
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter smth: ");
+            Console.ReadLine();
+
+            //The game is on
+            int[] randomnumbers = ArrayWithRandomNumbers(21);
+            int j = 0;
+            for (int i = 0; i < 40; i += 2)
+            {
+                Console.SetCursorPosition(i, j);
+                Console.BackgroundColor = (ConsoleColor)randomnumbers[j];
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("The game is on!");
+                Console.ResetColor();
+                if (i % 4 == 0 || i == 38)
+                {
+                    Thread.Sleep(100);
+                    Console.Clear();
+                }
+                j++;
+            }
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(4, 1));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(16, 1));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(4) + NoteDuration(4) / 2);
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(16));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            Thread.Sleep(NoteDuration(4));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(4));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8, 1));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.A4), NoteDuration(4) + NoteDuration(4) / 2);
+            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            CenteredColoredText("The game is on!", 2, 3, 21);
+
+
             //Pilnais karātavu zīmējums
             string[,] hangman = CreateHangman();
 
             //Incorrect guess
-            Console.Write("Enter anything: ");
+            Console.Write("Enter smth: ");
             Console.ReadLine();
             Console.Clear();
             int[] colornumbers = ArrayWithRandomNumbers(8);
@@ -150,6 +203,21 @@ namespace Hangman_music
                     }
                 }
                 return someArray;
+            }
+
+            static void CenteredColoredText(string message, int number1, int number2, int number3)
+            {
+                Random rand = new Random();
+                Console.SetCursorPosition(number1, number2);
+                Console.ForegroundColor = (ConsoleColor)ArrayWithRandomNumbers(number3)[rand.Next(number3)];
+                CenterText(message);
+                Console.ResetColor();
+            }
+
+            static void CenterText(string text)
+            {
+                Console.Write(new string(' ', (Console.WindowWidth - text.Length) / 2));
+                Console.WriteLine(text);
             }
         }
     }

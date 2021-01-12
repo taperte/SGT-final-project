@@ -180,10 +180,32 @@ namespace Hangman_main
             Console.ResetColor();
         }
 
+        //This method prints centered text.
         public static void CenterText(string text)
         {
             Console.Write(new string(' ', (Console.WindowWidth - text.Length) / 2));
             Console.WriteLine(text);
+        }
+
+        //This method asks user to input ENTER and then clears console.
+        public static void PressEnter(int number)
+        {
+            while (true)
+            {
+                string message1 = "Press ENTER to proceed: ";
+                string message2 = "Lai turpinātu, spied ENTER: ";
+                string message3 = "Чтобы продолжить, нажми ENTER: ";
+                Console.WriteLine(HangmanMethods.SwitchLanguage(number, message1, message2, message3));
+                if (!string.IsNullOrEmpty(Console.ReadLine()))
+                {
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            Console.Clear();
         }
     }
 }

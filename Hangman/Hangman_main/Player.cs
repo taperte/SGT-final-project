@@ -31,7 +31,7 @@ namespace Hangman_main
                     message2 = $"{i + 1}. spēlētājs, lūdzu, ievadiet savu vārdu: ";
                     message3 = $"Игрок №{i + 1}, пожалуйста, введите своё имя: ";
                 }
-                Console.Write(HangmanMethods.SwitchLanguage(number2, message1, message2, message3));
+                Console.Write(SwitchLanguage(number2, message1, message2, message3));
                 string input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
@@ -44,7 +44,7 @@ namespace Hangman_main
                     IDnumber = i + 1,
                     Name = input,
                     IncorrectGuessCount = 0,
-                    Hangman = HangmanMethods.CreateHangmanImage(),
+                    Hangman = CreateHangmanImage(),
                 };
                 //A color is assigned to the player.
                 player.ChooseColor(players);
@@ -61,7 +61,7 @@ namespace Hangman_main
             string message1 = $"Good luck, {Name}!";
             string message2 = $"Veiksmi spēlē, {Name}!";
             string message3 = $"Удачи в игре, {Name}!";
-            Console.WriteLine(HangmanMethods.SwitchLanguage(number, message1, message2, message3));
+            Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
         }
 
         //This method chooses a random color from the ConsoleColor enum
@@ -156,7 +156,7 @@ namespace Hangman_main
         {
             //An integer array is created; the integers in the array will be used
             //as ConsoleColor value indices.
-            int[] colorNumbers = HangmanMethods.ArrayWithRandomNumbers(7);
+            int[] colorNumbers = ArrayWithRandomNumbers(7);
             for (int i = 0; i < 3; i++)
             {
                 PrintHangmanImage((ConsoleColor)colorNumbers[i]);
@@ -193,7 +193,7 @@ namespace Hangman_main
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("0 incorrect guesses:");
                     Console.ResetColor();
-                    Hangman = HangmanMethods.CreateHangmanImage();
+                    Hangman = CreateHangmanImage();
                 }
                 else
                 {

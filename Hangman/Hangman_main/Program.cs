@@ -26,7 +26,7 @@ namespace Hangman_main
             //1) Player(s) choose(s) language.
             while (true)
             {
-                Console.WriteLine("For English, enter 1.\nLai izvēlētos latviešu valodu, ievadiet 2.\nЧтобы выбрать русский язык, введите 3.");
+                Console.WriteLine("For English, enter 1.\nLai izvēlētos latviešu valodu, ievadi 2.\nЧтобы выбрать русский язык, введи 3.");
                 string languageInput = Console.ReadLine();
                 if (string.IsNullOrEmpty(languageInput) || !int.TryParse(languageInput, out language))
                 {
@@ -54,8 +54,8 @@ namespace Hangman_main
             while (true)
             {
                 english = "Please choose level (1, 2 or 3): ";
-                latvian = "Izvēlieties līmeni (1, 2 vai 3): ";
-                russian = "Выберите уровень (1, 2 или 3): ";
+                latvian = "Izvēlies līmeni (1, 2 vai 3): ";
+                russian = "Выбери уровень (1, 2 или 3): ";
                 HangmanMethods.SwitchLanguage(language, english, latvian, russian);
                 string languageInput = Console.ReadLine();
                 if (string.IsNullOrEmpty(languageInput) || !int.TryParse(languageInput, out level))
@@ -79,8 +79,8 @@ namespace Hangman_main
             while (true)
             {
                 english = "Please enter the number of players: ";
-                latvian = "Ievadiet spēlētāju skaitu: ";
-                russian = "Введите количество игроков: ";
+                latvian = "Ievadi spēlētāju skaitu: ";
+                russian = "Введи количество игроков: ";
                 HangmanMethods.SwitchLanguage(language, english, latvian, russian);
                 string playerCountInput = Console.ReadLine();
                 if (string.IsNullOrEmpty(playerCountInput) || !int.TryParse(playerCountInput, out playerCount))
@@ -115,10 +115,17 @@ namespace Hangman_main
             //8) The program prints the progress array.
             HangmanMethods.ShowProgress(progress);
 
+            Player currentPlayer = players[0];
+
             //9) The game begins.
             while (!gameFinished)
             {
                 //9.1) Spēlētājs ievada minējumu
+                english = $"{currentPlayer.Name}, please enter your guess: ";
+                latvian = $"{currentPlayer.Name}, tavs minējums: ";
+                russian = $"{currentPlayer.Name}, твой ход: ";
+                HangmanMethods.SwitchLanguage(language, english, latvian, russian);
+                string guess = Console.ReadLine();
                 //9.2) Validācija(ievada empty string, ievada kaut ko, kas nav 1 burts un pēc garuma nesakrīt ar minamo vārdu-- programma paziņo par kļūdu)
                 //9.3) Ja minējums derīgs, tas tiek saglabāts sarakstā
                 //9.4) Pārbauda, vai minējums jau ir bijis, -- tas ir gatavs.
@@ -134,8 +141,8 @@ namespace Hangman_main
                 //9.8) Ja inputs sakrīt ar minamo vārdu, gameFinished == true, spēle ir beigusies,
                 //paziņojums par uzvaru, !!!! kaut kas foršs ar karātavām
                 //9.9) Ja spēlētajs nospiež Esc, iziet no spēles.
-                //Programma jautā, vai sākt jaunu spēli vai iziet pavisam
 
+             
             }
         }
     }

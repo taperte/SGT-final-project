@@ -54,6 +54,7 @@ namespace Hangman_main
             }
         }
 
+        //This method prints a greeting for a player before adding them to the player list.
         private void PrintGreeting(int number)
         {
             string message1 = $"Good luck, {Name}!";
@@ -153,24 +154,24 @@ namespace Hangman_main
         //This method prints player's hangman image update after icorrect guess.
         public void IncorrecGuess()
         {
-            //An int array is created; the integers in the array will be used
+            //An integer array is created; the integers in the array will be used
             //as ConsoleColor value indices.
-            int[] colornumbers = ArrayWithRandomNumbers(7);
+            int[] colorNumbers = ArrayWithRandomNumbers(7);
             for (int i = 0; i < 3; i++)
             {
-                PrintHangmanImage((ConsoleColor)colornumbers[i]);
+                PrintHangmanImage((ConsoleColor)colorNumbers[i]);
                 Console.ResetColor();
                 Console.Beep(NoteFrequency(Note.G4), NoteDuration(8));
                 Console.Clear();
             }
-            PrintHangmanImage((ConsoleColor)colornumbers[3]);
+            PrintHangmanImage((ConsoleColor)colorNumbers[3]);
             Console.ResetColor();
             Console.Beep(NoteFrequency(Note.E4), NoteDuration(2));
             Thread.Sleep(NoteDuration(8));
             Console.Clear();
             for (int i = 0; i < 3; i++)
             {
-                PrintHangmanImage((ConsoleColor)colornumbers[i + 4]);
+                PrintHangmanImage((ConsoleColor)colorNumbers[i + 4]);
                 Console.ResetColor();
                 Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
                 Console.Clear();

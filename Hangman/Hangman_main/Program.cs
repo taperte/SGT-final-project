@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace Hangman_main
 {
-    class Program : HangmanMethods
+    class Program : HangmanMusic
     {
         static void Main(string[] args)
         {

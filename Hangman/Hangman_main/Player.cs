@@ -22,14 +22,14 @@ namespace Hangman_main
                 if (number1 == 1)
                 {
                     message1 = "Please enter your name: ";
-                    message2 = "Lūdzu, ievadiet savu vārdu: ";
-                    message3 = "Пожалуйста, введите своё имя: ";
+                    message2 = "Lūdzu, ievadi savu vārdu: ";
+                    message3 = "Пожалуйста, введи своё имя: ";
                 }
                 else
                 {
                     message1 = $"Player {i + 1}, please enter your name: ";
-                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadiet savu vārdu: ";
-                    message3 = $"Игрок №{i + 1}, пожалуйста, введите своё имя: ";
+                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadi savu vārdu: ";
+                    message3 = $"Игрок №{i + 1}, пожалуйста, введи своё имя: ";
                 }
                 Console.Write(SwitchLanguage(number2, message1, message2, message3));
                 string input = Console.ReadLine();
@@ -217,7 +217,7 @@ namespace Hangman_main
                         message2 = $"{IncorrectGuessCount} nepareizi minējumi:";
                         if (IncorrectGuessCount > 1 && IncorrectGuessCount <= 4)
                         {
-                            message3 = $"{IncorrectGuessCount} неверных догадки:";
+                            message3 = $"{IncorrectGuessCount} неверные догадки:";
                         }
                         else
                         {
@@ -228,8 +228,8 @@ namespace Hangman_main
                     else
                     {
                         message1 = $"{IncorrectGuessCount} incorrect guesses — you've lost!";
-                        message2 = $"{IncorrectGuessCount} nepareizi minējumi — tu zaudēji!:";
-                        message3 = $"{IncorrectGuessCount} неверных догадок — ты проиграл!:";
+                        message2 = $"{IncorrectGuessCount} nepareizi minējumi — spēle ir zaudēta!";
+                        message3 = $"{IncorrectGuessCount} неверных догадок — игра проиграна!";
                         Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
                     }
                     Console.ForegroundColor = ConsoleColor.Red;

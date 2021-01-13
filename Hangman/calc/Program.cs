@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace calc
 {
@@ -7,16 +8,12 @@ namespace calc
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(SomeMethod(67));
-            Console.WriteLine((67.0 - 69.0) / 12.0);
-        }
+            List<string> list1 = new List<string> { "skapis", "putra", "lielveikals", "pīle" };
+            List<string> list2 = new List<string> { "приговор", "язык", "машина" };
+            List<string> list3 = new List<string> { "sheep", "goat", "computer", "america", "chase", "paste", "programming" };
+            Random rand = new Random();
+            string randomWord = list3[rand.Next(list3.Count)];
 
-        //returns 440 * 2^((n - 69)/12)
-        static int SomeMethod(int somenumber)
-        {
-            double exponent = (somenumber - 69.0) / 12.0;
-            double someothernumber = 440 * Math.Pow(2, exponent);
-            return (int)someothernumber;
         }
     }
 }

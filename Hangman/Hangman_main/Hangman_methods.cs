@@ -1,52 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Hangman_main
 {
     class HangmanMethods
     {
         //This method switches between languages.
-        public static void SwitchLanguage(int number, string message1, string message2, string message3)
+        public static string SwitchLanguage(int number, string message1, string message2, string message3)
         {
-            switch (number)
+            return number switch
             {
-                case 1:
-                    Console.Write(message1);
-                    break;
-                case 2:
-                    Console.Write(message2);
-                    break;
-                default:
-                    Console.Write(message3);
-                    break;
-            }
+                1 => message1,
+                2 => message2,
+                _ => message3,
+            };
         }
 
         //This method creates a certain number of player objects and saves them to a list.
-        public static void CreatePlayers(List<Player> players, int number1, int number2)
+        public static void AddPlayers(List<Player> players, int number1, int number2)
         {
             string message1, message2, message3;
-            for (int i = 0; i < number1; i++)
+            for (int i = 0; i < number1;)
             {
                 //A player enters their name.
                 if (number1 == 1)
                 {
                     message1 = "Please enter your name: ";
-                    message2 = "Lūdzu, ievadiet savu vārdu: ";
-                    message3 = "Пожалуйста, введите своё имя: ";
+                    message2 = "Lūdzu, ievadi savu vārdu: ";
+                    message3 = "Пожалуйста, введи своё имя: ";
                 }
                 else
                 {
                     message1 = $"Player {i + 1}, please enter your name: ";
-                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadiet savu vārdu: ";
-                    message3 = $"Игрок №{i + 1}, пожалуйста, введите своё имя: ";
+                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadi savu vārdu: ";
+                    message3 = $"Игрок №{i + 1}, пожалуйста, введи своё имя: ";
                 }
-                SwitchLanguage(number2, message1, message2, message3);
+                Console.Write(SwitchLanguage(number2, message1, message2, message3));
                 string input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.Write("Invalid input! ");
+                    message1 = "Invalid input! ";
+                    message2 = "Kļūda! ";
+                    message3 = "Ошибка! ";
+                    Console.Write(SwitchLanguage(number2, message1, message2, message3));
                     continue;
                 }
                 //A player class object is created.
@@ -56,10 +52,13 @@ namespace Hangman_main
                     Name = input,
                     IncorrectGuessCount = 0,
                     Hangman = CreateHangmanImage(),
-                    Color = ChooseColor(players)
                 };
-                //The object is added to a list.
+                //A color is assigned to the player.
+                player.ChooseColor(players);
+                //The program prints greeting for the player and adds them to the list.
+                player.PrintGreeting(number2);
                 players.Add(player);
+                i++;
             }
         }
 
@@ -102,42 +101,49 @@ namespace Hangman_main
             return hangman;
         }
 
-        //This method chooses a random color from the ConsoleColor enum
-        //to assign to a player object property.
-        public static ConsoleColor ChooseColor(List<Player> players)
+        //This method chooses the secret word from the word lists.
+        public static string ChooseWordToGuess(List<string> list1, List<string> list2, List<string> list3, int number1, int number2)
         {
-            int repititions = 0;
+            //The program selects the list to choose from according to player's choice of language.
+            List<string> listToChooseFrom = new List<string>();
+            if (number1 == 1)
+            {
+                listToChooseFrom = list1;
+            }
+            else if (number1 == 2)
+            {
+                listToChooseFrom = list2;
+            }
+            else if (number1 == 3)
+            {
+                listToChooseFrom = list3;
+            }
+            //Then selects a word according to player's choice of level.
             while (true)
             {
-                //The program generates a random number from 0 to 14 (no white color).
-                Random rand = new Random();
-                int randomNumber = rand.Next(15);
-                //If it equals the index of black, dark blue, gray or dark gray,
-                //the program exits current loop iteration.
-                if (randomNumber == 0 || randomNumber == 1 || randomNumber == 7 || randomNumber == 8)
+                Random random = new Random();
+                string wordToGuess = listToChooseFrom[random.Next(listToChooseFrom.Count)];
+                if (number2 == 1)
                 {
-                    continue;
-                }
-                //When a proper number is generated, the program checks
-                //whether the corresponding color was assiged to a previous player already.
-                for (int i = 0; i < players.Count; i++)
-                {
-                    //If random number equals the index of an existing color from players' list,
-                    if (randomNumber == (int)players[i].Color)
+                    if (wordToGuess.Length <= 5)
                     {
-                        //the counter adds 1.
-                        repititions++;
+                        return wordToGuess;
                     }
                 }
-                //If there are no matches,
-                if (repititions == 0)
+                else if (number2 == 2)
                 {
-                    //the new color is assigned and the program exits the loop.
-                    ConsoleColor color = (ConsoleColor)randomNumber;
-                    return color;
+                    if (5 < wordToGuess.Length && wordToGuess.Length <= 7)
+                    {
+                        return wordToGuess;
+                    }
                 }
-                //At the end of iteration, the repitition counter value is restored to 0.
-                repititions = 0;
+                else if (number2 == 3)
+                {
+                    if (wordToGuess.Length > 7)
+                    {
+                        return wordToGuess;
+                    }
+                }
             }
         }
 
@@ -185,6 +191,67 @@ namespace Hangman_main
             }
             Console.WriteLine();
             Console.WriteLine();
+        }
+
+        //This method creates an integer array of a given size 
+        //and fills it with random numbers from 2 to 14;
+        //the same number can be generated more than once, but not in a row.
+        public static int[] ArrayWithRandomNumbers(int number)
+        {
+            int[] someArray = new int[number];
+            for (int i = 0; i < someArray.Length;)
+            {
+                Random rand = new Random();
+                int randomNumber = rand.Next(2, 15);
+                if (randomNumber == 7 || randomNumber == 8)
+                {
+                    continue;
+                }
+                if (i == 0 || randomNumber != someArray[i - 1])
+                {
+                    someArray[i] = randomNumber;
+                    i++;
+                }
+            }
+            return someArray;
+        }
+
+        //This method prints centered text in a random color on a certain line.
+        public static void CenteredTextInColor(string text, int number1, int number2)
+        {
+            Random rand = new Random();
+            Console.SetCursorPosition(0, number1);
+            Console.ForegroundColor = (ConsoleColor)ArrayWithRandomNumbers(number2)[rand.Next(number2)];
+            CenterText(text);
+            Console.ResetColor();
+        }
+
+        //This method prints centered text.
+        public static void CenterText(string text)
+        {
+            Console.Write(new string(' ', (Console.WindowWidth - text.Length) / 2));
+            Console.WriteLine(text);
+        }
+
+        //This method asks user to input ENTER and then clears console.
+        public static void PressEnter(int number)
+        {
+            while (true)
+            {
+                string message1 = "Press ENTER to proceed: ";
+                string message2 = "Lai turpinātu, spied ENTER: ";
+                string message3 = "Чтобы продолжить, нажми ENTER: ";
+                Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
+                if (!string.IsNullOrEmpty(Console.ReadLine()))
+                {
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            Console.Clear();
         }
     }
 }

@@ -48,6 +48,7 @@ namespace Hangman
                 }
             }
 
+
             //Nodrukā karātavas
             for (int row = 0; row < hangman.GetLength(0); row++)
             {

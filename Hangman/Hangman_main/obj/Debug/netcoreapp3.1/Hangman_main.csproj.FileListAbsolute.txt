@@ -11,3 +11,16 @@ C:\Users\''Dell''\source\repos\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hang
 C:\Users\''Dell''\source\repos\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.dll
 C:\Users\''Dell''\source\repos\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.pdb
 C:\Users\''Dell''\source\repos\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.genruntimeconfig.cache
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\bin\Debug\netcoreapp3.1\Hangman_main.exe
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\bin\Debug\netcoreapp3.1\Hangman_main.deps.json
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\bin\Debug\netcoreapp3.1\Hangman_main.runtimeconfig.json
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\bin\Debug\netcoreapp3.1\Hangman_main.runtimeconfig.dev.json
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\bin\Debug\netcoreapp3.1\Hangman_main.dll
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\bin\Debug\netcoreapp3.1\Hangman_main.pdb
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.csprojAssemblyReference.cache
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.AssemblyInfoInputs.cache
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.AssemblyInfo.cs
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.csproj.CoreCompileInputs.cache
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.dll
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.pdb
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\Hangman_main\obj\Debug\netcoreapp3.1\Hangman_main.genruntimeconfig.cache

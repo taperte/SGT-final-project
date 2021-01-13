@@ -12,54 +12,9 @@ namespace Hangman_main
         public string[,] Hangman { get; set; }
         public ConsoleColor Color { get; set; }
 
-        //This method creates a certain number of player objects and saves them to a list.
-        public static void AddPlayers(List<Player> players, int number1, int number2)
-        {
-            string message1, message2, message3;
-            for (int i = 0; i < number1;)
-            {
-                //A player enters their name.
-                if (number1 == 1)
-                {
-                    message1 = "Please enter your name: ";
-                    message2 = "Lūdzu, ievadi savu vārdu: ";
-                    message3 = "Пожалуйста, введи своё имя: ";
-                }
-                else
-                {
-                    message1 = $"Player {i + 1}, please enter your name: ";
-                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadi savu vārdu: ";
-                    message3 = $"Игрок №{i + 1}, пожалуйста, введи своё имя: ";
-                }
-                Console.Write(SwitchLanguage(number2, message1, message2, message3));
-                string input = Console.ReadLine();
-                if (string.IsNullOrEmpty(input))
-                {
-                    message1 = "Invalid input! ";
-                    message2 = "Kļūda! ";
-                    message3 = "Ошибка! ";
-                    Console.Write(SwitchLanguage(number2, message1, message2, message3));
-                    continue;
-                }
-                //A player class object is created.
-                Player player = new Player()
-                {
-                    IDnumber = i + 1,
-                    Name = input,
-                    IncorrectGuessCount = 0,
-                    Hangman = CreateHangmanImage(),
-                };
-                //A color is assigned to the player.
-                player.ChooseColor(players);
-                //The program prints greeting for the player and adds them to the list.
-                player.PrintGreeting(number2);
-                players.Add(player);
-                i++;
-            }
-        }
 
         //This method prints a greeting for a player before adding them to the player list.
-        private void PrintGreeting(int number)
+        public void PrintGreeting(int number)
         {
             string message1 = $"Good luck, {Name}!";
             string message2 = $"Veiksmi spēlē, {Name}!";
@@ -69,7 +24,7 @@ namespace Hangman_main
 
         //This method chooses a random color from the ConsoleColor enum
         //to assign to a player object property.
-        private ConsoleColor ChooseColor(List<Player> players)
+        public ConsoleColor ChooseColor(List<Player> players)
         {
             int repititions = 0;
             while (true)

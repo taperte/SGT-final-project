@@ -16,6 +16,52 @@ namespace Hangman_main
             };
         }
 
+        //This method creates a certain number of player objects and saves them to a list.
+        public static void AddPlayers(List<Player> players, int number1, int number2)
+        {
+            string message1, message2, message3;
+            for (int i = 0; i < number1;)
+            {
+                //A player enters their name.
+                if (number1 == 1)
+                {
+                    message1 = "Please enter your name: ";
+                    message2 = "Lūdzu, ievadi savu vārdu: ";
+                    message3 = "Пожалуйста, введи своё имя: ";
+                }
+                else
+                {
+                    message1 = $"Player {i + 1}, please enter your name: ";
+                    message2 = $"{i + 1}. spēlētājs, lūdzu, ievadi savu vārdu: ";
+                    message3 = $"Игрок №{i + 1}, пожалуйста, введи своё имя: ";
+                }
+                Console.Write(SwitchLanguage(number2, message1, message2, message3));
+                string input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input))
+                {
+                    message1 = "Invalid input! ";
+                    message2 = "Kļūda! ";
+                    message3 = "Ошибка! ";
+                    Console.Write(SwitchLanguage(number2, message1, message2, message3));
+                    continue;
+                }
+                //A player class object is created.
+                Player player = new Player()
+                {
+                    IDnumber = i + 1,
+                    Name = input,
+                    IncorrectGuessCount = 0,
+                    Hangman = CreateHangmanImage(),
+                };
+                //A color is assigned to the player.
+                player.ChooseColor(players);
+                //The program prints greeting for the player and adds them to the list.
+                player.PrintGreeting(number2);
+                players.Add(player);
+                i++;
+            }
+        }
+
         //This method creates an initial hangman image. 
         public static string[,] CreateHangmanImage()
         {
@@ -171,12 +217,12 @@ namespace Hangman_main
         }
 
         //This method prints centered text in a random color on a certain line.
-        public static void CenteredTextInColor(string message, int number1, int number2)
+        public static void CenteredTextInColor(string text, int number1, int number2)
         {
             Random rand = new Random();
             Console.SetCursorPosition(0, number1);
             Console.ForegroundColor = (ConsoleColor)ArrayWithRandomNumbers(number2)[rand.Next(number2)];
-            CenterText(message);
+            CenterText(text);
             Console.ResetColor();
         }
 
@@ -195,7 +241,7 @@ namespace Hangman_main
                 string message1 = "Press ENTER to proceed: ";
                 string message2 = "Lai turpinātu, spied ENTER: ";
                 string message3 = "Чтобы продолжить, нажми ENTER: ";
-                Console.WriteLine(HangmanMethods.SwitchLanguage(number, message1, message2, message3));
+                Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
                 if (!string.IsNullOrEmpty(Console.ReadLine()))
                 {
                     continue;

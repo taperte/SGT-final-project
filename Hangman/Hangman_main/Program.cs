@@ -105,7 +105,7 @@ namespace Hangman_main
                 }
             }
             //5) The program creates player objects and saves them to the list.
-            Player.AddPlayers(players, playerCount, language);
+            AddPlayers(players, playerCount, language);
 
             //6) The program chooses secret word from one of the word lists and saves it to a variable.
             string wordToGuess = ChooseWordToGuess(ENwords, LVwords, RUwords, language, level);

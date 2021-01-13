@@ -52,7 +52,7 @@ namespace Hangman_main
             //The player(s) press(es) enter to proceed. 
             PressEnter(language);
             Player example = new Player();
-            example.BuildHangmanImage();
+            example.BuildHangmanImage(language);
 
             //3) Player(s) choose(s) level.
             while (true)

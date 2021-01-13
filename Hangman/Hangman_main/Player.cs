@@ -35,7 +35,10 @@ namespace Hangman_main
                 string input = Console.ReadLine();
                 if (string.IsNullOrEmpty(input))
                 {
-                    Console.Write("Invalid input! ");
+                    message1 = "Invalid input! ";
+                    message2 = "Kļūda! ";
+                    message3 = "Ошибка! ";
+                    Console.Write(SwitchLanguage(number2, message1, message2, message3));
                     continue;
                 }
                 //A player class object is created.
@@ -49,7 +52,7 @@ namespace Hangman_main
                 //A color is assigned to the player.
                 player.ChooseColor(players);
                 //The program prints greeting for the player and adds them to the list.
-                player.PrintGreeting(number1);
+                player.PrintGreeting(number2);
                 players.Add(player);
                 i++;
             }
@@ -184,36 +187,56 @@ namespace Hangman_main
 
 
         //This method shows how a hangman image gets updated in the course of the game.
-        public void BuildHangmanImage()
+        public void BuildHangmanImage(int number)
         {
             for (IncorrectGuessCount = 0; IncorrectGuessCount < 8; IncorrectGuessCount++)
             {
+                string message1, message2, message3;
                 if (IncorrectGuessCount == 0)
                 {
+                    message1 = "0 incorrect guesses:";
+                    message2 = "0 nepareizu minējumu:";
+                    message3 = "0 неверных догадок:";
+                    Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("0 incorrect guesses:");
-                    Console.ResetColor();
                     Hangman = CreateHangmanImage();
+                    Console.ResetColor();
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
                     if (IncorrectGuessCount == 1)
                     {
-                        Console.WriteLine($"{IncorrectGuessCount} incorrect guess:");
+                        message1 = "1 incorrect guess:";
+                        message2 = "1 nepareizs minējums:";
+                        message3 = "1 неверная догадка:";
+                        Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
                     }
                     else if (IncorrectGuessCount != 7)
                     {
-                        Console.WriteLine($"{IncorrectGuessCount} incorrect guesses:");
+                        message1 = $"{IncorrectGuessCount} incorrect guesses:";
+                        message2 = $"{IncorrectGuessCount} nepareizi minējumi:";
+                        if (IncorrectGuessCount > 1 && IncorrectGuessCount <= 4)
+                        {
+                            message3 = $"{IncorrectGuessCount} неверных догадки:";
+                        }
+                        else
+                        {
+                            message3 = $"{IncorrectGuessCount} неверных догадок:";
+                        }
+                        Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
                     }
                     else
                     {
-                        Console.WriteLine($"{IncorrectGuessCount} incorrect guesses — you've lost!");
+                        message1 = $"{IncorrectGuessCount} incorrect guesses — you've lost!";
+                        message2 = $"{IncorrectGuessCount} nepareizi minējumi — tu zaudēji!:";
+                        message3 = $"{IncorrectGuessCount} неверных догадок — ты проиграл!:";
+                        Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
                     }
-                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Red;
                     UpdateHangmanImage();
+                    Console.ResetColor();
                 }
-                PrintHangmanImage(ConsoleColor.Gray);
+                PrintHangmanImage(ConsoleColor.Red);
                 Thread.Sleep(1500);
                 Console.Clear();
             }

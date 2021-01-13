@@ -49,6 +49,7 @@ namespace Hangman_main
             latvian = "";
             russian = "";
             Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
+            //The player(s) press(es) enter to proceed. 
             PressEnter(language);
             Player example = new Player();
             example.BuildHangmanImage();
@@ -108,12 +109,17 @@ namespace Hangman_main
 
             //6) The program chooses secret word from one of the word lists and saves it to a variable.
             string wordToGuess = ChooseWordToGuess(ENwords, LVwords, RUwords, language, level);
-            HangmanMusic.TheGameIsOn(language);
-            Thread.Sleep(1500);
-            Console.Clear();
 
             //7) Progress array is created.
             string[] progress = CreateProgressArray(wordToGuess);
+
+            //The player(s) press(es) enter to proceed. 
+            PressEnter(language);
+
+            //The game begins.
+            TheGameIsOn(language);
+            Thread.Sleep(1500);
+            Console.Clear();
 
             //8) The program prints the progress array.
             ShowProgress(progress);

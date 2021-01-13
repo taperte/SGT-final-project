@@ -170,8 +170,17 @@ namespace Hangman_main
                     Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
                     continue;
                 }
+                //If the player guessed the word, they've won; the game is finished.
+                if (guess == secretWord)
+                {
+                    VictoryMusic();
+                    english = $"{currentPlayer.Name}, congrats, you've won the game!";
+                    latvian = $"{currentPlayer.Name}, urrā, tu uzvarēji!";
+                    russian = $"{currentPlayer.Name}, ура, это победа!";
+                    gameFinished = true;
+                }
                 //If the player inputted a letter, the program checks whether the secret word contains it. 
-                if (guess.Length == 1 && secretWord.Contains(guess))
+                else if (guess.Length == 1 && secretWord.Contains(guess))
                 {
                     for (int i = 0; i < secretWord.Length; i++)
                     {
@@ -183,20 +192,29 @@ namespace Hangman_main
                     }
                     CorrectGuessMusic();
                 }
-                else
+                //Otherwise player's incorrect guess counter and hangman image get updated.
+                else if (guess.Length == 1 && !secretWord.Contains(guess) || guess.Length == secretWord.Length)
                 {
                     currentPlayer.IncorrectGuessCount++;
                     currentPlayer.UpdateHangmanImage();
-                    currentPlayer.IncorrectGuess();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    english = "Incorrect guess!"; latvian = "Šāda burta nav!"; russian = "Такой буквы нет!";
-                    Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
+                    //If incorrect guess count < 7, the program plays incorrect guess notification.
+                    if (currentPlayer.IncorrectGuessCount < 7)
+                    {
+                        currentPlayer.IncorrectGuess();
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        english = "Incorrect guess!"; latvian = "Šāda burta nav!"; russian = "Такой буквы нет!";
+                        Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
+                    }
+                    else if (currentPlayer.IncorrectGuessCount == 7 && players.Count > 1)
+                    {
+
+                    }
                 }
                 //Ja šāda burta nav, tad pieskaita vienu punktu pie spēlētāja zaudējumu skaitītāja,
                 //nodrukā paziņojumu un apdeito karātavas un nodrukā karātavas.
 
                 Console.ResetColor();
-                //9.6) Kad gājiens izdarīts, nodrukā apdeitotu progress array.
+                //9.6) Kad gājiens izdarīts, nodrukā apdeitotu progress listi.
                 ShowProgress(progress);
                 //9.7) Ja skaitītājs == 7, spēlētājs ir zaudējis.gameFinished == true + paziņojums par zaudējumu,
                 //!!! kaut kas foršs ar karātavām

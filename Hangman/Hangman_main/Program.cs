@@ -82,9 +82,9 @@ namespace Hangman_main
             //4) Number of players.
             while (true)
             {
-                english = "Please enter the number of players: ";
-                latvian = "Ievadi spēlētāju skaitu: ";
-                russian = "Введи количество игроков: ";
+                english = "The number of players: ";
+                latvian = "Spēlētāju skaits: ";
+                russian = "Количество игроков: ";
                 Console.Write(SwitchLanguage(language, english, latvian, russian));
                 string playerCountInput = Console.ReadLine();
                 if (string.IsNullOrEmpty(playerCountInput) || !int.TryParse(playerCountInput, out playerCount))

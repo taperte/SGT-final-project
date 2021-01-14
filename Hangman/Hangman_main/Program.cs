@@ -155,7 +155,7 @@ namespace Hangman_main
                     //from the length of the secret word, another error message appears.
                     if (guess.Length != 1 && guess.Length != secretWord.Length)
                     {
-                        english = "You can only guess 1 letter at a time or the whole word. Try again!";
+                        english = "You can only guess one letter at a time or the whole word. Try again!";
                         latvian = "Tu vari minēt vai nu vienu burtu, vai visu vārdu. Mēģini vēlreiz!";
                         russian = "Ты можешь ввести либо одну букву, либо всё слово. Попробуй ещё раз!";
                         Console.ForegroundColor = ConsoleColor.Red;
@@ -181,7 +181,7 @@ namespace Hangman_main
                         Console.ForegroundColor = ConsoleColor.Green;
                         english = $"{currentPlayer.Name}, congrats, you've won the game!";
                         latvian = $"{currentPlayer.Name}, urrā, tu uzvarēji!";
-                        russian = $"{currentPlayer.Name}, ура, это победа!";
+                        russian = $"{currentPlayer.Name}, ура, ты победил!";
                         Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
                         Console.ResetColor();
                         gameFinished = true;

@@ -97,7 +97,7 @@ namespace Hangman_main
                     Console.Write(SwitchLanguage(language, english, latvian, russian));
                     continue;
                 }
-                if (playerCount < 1 || playerCount > 9)
+                if (playerCount < 1 || playerCount > 11)
                 {
                     english = "Invalid number! "; latvian = "Nepareizs skaitlis! "; russian = "Неверное число! ";
                     Console.Write(SwitchLanguage(language, english, latvian, russian));

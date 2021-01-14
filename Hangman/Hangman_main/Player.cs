@@ -32,8 +32,8 @@ namespace Hangman_main
                 //The program generates a random number from 2 to 14 (no, black, dark blue or white color).
                 Random rand = new Random();
                 int randomNumber = rand.Next(2, 15);
-                //If it equals the index of gray, dark gray, green or red, the program exits current loop iteration.
-                if (randomNumber == 7 || randomNumber == 8 || randomNumber == 10 || randomNumber == 12)
+                //If it equals the index of gray or dark gray the program exits current loop iteration.
+                if (randomNumber == 7 || randomNumber == 8)
                 {
                     continue;
                 }
@@ -109,7 +109,7 @@ namespace Hangman_main
             Console.WriteLine();
         }
 
-        //This method prints player's hangman image update after icorrect guess.
+        //This method prints player's hangman image update after incorrect guess.
         public void IncorrectGuess()
         {
             //An integer array is created; the integers in the array will be used

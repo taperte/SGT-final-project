@@ -122,70 +122,70 @@ namespace Hangman_main
             while (true)
             {
                 Random random = new Random();
-                string wordToGuess = listToChooseFrom[random.Next(listToChooseFrom.Count)];
+                string word = listToChooseFrom[random.Next(listToChooseFrom.Count)];
                 if (number2 == 1)
                 {
-                    if (wordToGuess.Length <= 5)
+                    if (word.Length <= 5)
                     {
-                        return wordToGuess;
+                        return word;
                     }
                 }
                 else if (number2 == 2)
                 {
-                    if (5 < wordToGuess.Length && wordToGuess.Length <= 7)
+                    if (5 < word.Length && word.Length <= 7)
                     {
-                        return wordToGuess;
+                        return word;
                     }
                 }
                 else if (number2 == 3)
                 {
-                    if (wordToGuess.Length > 7)
+                    if (word.Length > 7)
                     {
-                        return wordToGuess;
+                        return word;
                     }
                 }
             }
         }
 
-        //This method receives a string value, creates a string array with the size == string.Length
-        //and fills it with "_ ". If there is a hyphen in the string value, the spot in the array 
+        //This method receives a string value, creates a string list and fills it with "_ ".
+        //If there is a hyphen in the string value, the spot in the list 
         //with the corresponding index is filled with a hyphen, too.
-        public static string[] CreateProgressArray(string someString)
+        public static List<string> CreateProgressList(string someString)
         {
-            string[] someArray = new string[someString.Length];
+            List<string> someList = new List<string>();
             for (int i = 0; i < someString.Length; i++)
             {
                 if (someString.Substring(i, 1) == "-")
                 {
                     if (i != 0)
                     {
-                        someArray[i - 1] = "_";
+                        someList[i - 1] = "_";
                     }
-                    someArray[i] = "-";
+                    someList.Add("-");
                 }
                 else
                 {
-                    someArray[i] = "_ ";
+                    someList.Add("_ ");
                 }
             }
-            return someArray;
+            return someList;
         }
 
-        //This method prints the progress array.
-        public static void ShowProgress(string[] someArray)
+        //This method prints the progress list.
+        public static void ShowProgress(List<string> someList)
         {
-            for (int i = 0; i < someArray.Length; i++)
+            for (int i = 0; i < someList.Count; i++)
             {
-                if (someArray[i] == "_ " || someArray[i] == "_" || someArray[i] == "-")
+                if (someList[i] == "_ " || someList[i] == "_" || someList[i] == "-")
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(someArray[i]);
+                    Console.Write(someList[i]);
                     Console.ResetColor();
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
-                    Console.Write(someArray[i]);
+                    Console.Write(someList[i]);
                     Console.ResetColor();
                 }
             }

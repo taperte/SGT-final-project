@@ -122,26 +122,26 @@ namespace Hangman_main
             while (true)
             {
                 Random random = new Random();
-                string wordToGuess = listToChooseFrom[random.Next(listToChooseFrom.Count)];
+                string word = listToChooseFrom[random.Next(listToChooseFrom.Count)];
                 if (number2 == 1)
                 {
-                    if (wordToGuess.Length <= 5)
+                    if (word.Length <= 5)
                     {
-                        return wordToGuess;
+                        return word;
                     }
                 }
                 else if (number2 == 2)
                 {
-                    if (5 < wordToGuess.Length && wordToGuess.Length <= 7)
+                    if (5 < word.Length && word.Length <= 7)
                     {
-                        return wordToGuess;
+                        return word;
                     }
                 }
                 else if (number2 == 3)
                 {
-                    if (wordToGuess.Length > 7)
+                    if (word.Length > 7)
                     {
-                        return wordToGuess;
+                        return word;
                     }
                 }
             }

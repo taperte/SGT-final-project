@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Hangman_main
 {
@@ -57,6 +58,8 @@ namespace Hangman_main
                 player.ChooseColor(players);
                 //The program prints greeting for the player and adds them to the list.
                 player.PrintGreeting(number2);
+                Thread.Sleep(2000);
+                Console.Clear();
                 players.Add(player);
                 i++;
             }
@@ -220,36 +223,31 @@ namespace Hangman_main
         public static void CenteredTextInColor(string text, int number1, int number2)
         {
             Random rand = new Random();
-            Console.SetCursorPosition(0, number1);
             Console.ForegroundColor = (ConsoleColor)ArrayWithRandomNumbers(number2)[rand.Next(number2)];
-            CenterText(text);
+            Console.SetCursorPosition((Console.WindowWidth - text.Length) / 2, number1);
+            Console.WriteLine(text);
             Console.ResetColor();
         }
 
-        //This method prints centered text.
-        public static void CenterText(string text)
+        //This method asks user to input any key and then clears console.
+        public static void Proceed(int number)
         {
-            Console.Write(new string(' ', (Console.WindowWidth - text.Length) / 2));
-            Console.WriteLine(text);
-        }
-
-        //This method asks user to input ENTER and then clears console.
-        public static void PressEnter(int number)
-        {
+            string message1 = "Press any key to proceed: ";
+            string message2 = "Lai turpinātu, nospied jebkuru taustiņu: ";
+            string message3 = "Чтобы продолжить, нажми любую клавишу: ";
+            Console.Write(SwitchLanguage(number, message1, message2, message3));
             while (true)
             {
-                string message1 = "Press ENTER to proceed: ";
-                string message2 = "Lai turpinātu, spied ENTER: ";
-                string message3 = "Чтобы продолжить, нажми ENTER: ";
-                Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
-                if (!string.IsNullOrEmpty(Console.ReadLine()))
+                if (!Console.KeyAvailable)
                 {
+                    Thread.Sleep(1);
                     continue;
                 }
                 else
                 {
+                    var key = Console.ReadKey(true);
                     break;
-                }
+                } 
             }
             Console.Clear();
         }

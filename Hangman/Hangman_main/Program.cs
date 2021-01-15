@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Threading;
+using System.Text;
 
 namespace Hangman_main
 {
@@ -10,7 +11,7 @@ namespace Hangman_main
     {
         static void Main(string[] args)
         {
-            //Title in the console title bar set to "Hangman".
+            //Title in the console title bar is set to "Hangman".
             Console.Title = "Hangman";
             List<string> ENwords = File.ReadLines("C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\WordListEN_cleaned.txt").ToList();
             List<string> LVwords = File.ReadLines("C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\WordListLV_cleaned.txt").ToList();
@@ -21,9 +22,10 @@ namespace Hangman_main
             string english, latvian, russian;
             bool gameFinished = false;
 
-            //Change default output encoding to Unicode,
-            //so that Latvian and Russian text would be displayed correctly in console.
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            //Input and output encoding changed to Unicode, so that Latvian and Russian text
+            //would be displayed correctly in the console.
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
 
             //Player(s) choose(s) language.
             while (true)
@@ -53,10 +55,13 @@ namespace Hangman_main
             latvian = "";
             russian = "";
             Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
-            //The player(s) press(es) enter to proceed. 
-            PressEnter(language);
+            //The player(s) press(es) any key to proceed. 
+            Proceed(language);
+
+            //A player object is created to show how player's hangman image is updated in the course of the game.
             Player example = new Player();
             example.BuildHangmanImage(language);
+            Proceed(language);
 
             //Player(s) choose(s) level.
             while (true)
@@ -83,6 +88,8 @@ namespace Hangman_main
                     break;
                 }
             }
+            Console.Clear();
+
             //Number of players.
             while (true)
             {
@@ -108,17 +115,20 @@ namespace Hangman_main
                     break;
                 }
             }
+            Console.Clear();
+
             //The program creates player objects and saves them to the list.
             AddPlayers(players, playerCount, language);
 
             //The program chooses secret word from one of the word lists and saves it to a variable.
             string secretWord = ChooseWordToGuess(ENwords, LVwords, RUwords, language, level);
+            secretWord = secretWord.ToLower();
 
             //Progress list is created.
             List<string> progress = CreateProgressList(secretWord);
 
-            //The player(s) press(es) enter to proceed. 
-            PressEnter(language);
+            //The player(s) press(es) a key to proceed. 
+            Proceed(language);
 
             //The game begins.
             TheGameIsOn(language);
@@ -174,9 +184,13 @@ namespace Hangman_main
                     }
                     //If the guess is valid, it is added to the list of previous guesses.
                     previousGuesses.Add(guess);
+
                     //If the player guessed the word, they've won; the game is finished.
                     if (guess == secretWord)
                     {
+                        ShowProgress(progress);
+                        Thread.Sleep(2000);
+                        Console.Clear();
                         VictoryMusic();
                         Console.ForegroundColor = ConsoleColor.Green;
                         english = $"{currentPlayer.Name}, congrats, you've won the game!";
@@ -198,13 +212,36 @@ namespace Hangman_main
                                 progress[i] = guess;
                             }
                         }
-                        CorrectGuessMusic();
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        english = $"Congrats, \"{guess}\" is a correct guess!";
-                        latvian = $"Jā, šajā vārdā ir burts \"{guess}\"!";
-                        russian = $"Да, в этом слове есть буква «{guess}»!";
-                        Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
+                        //If the updated list still contains underscores, the program plays correct guess notification.
+                        if (progress.Contains("_ ") || progress.Contains("_"))
+                        {
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            CorrectGuessMusic();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            english = $"Congrats, \"{guess}\" is a correct guess!";
+                            latvian = $"Jā, šajā vārdā ir burts \"{guess}\"!";
+                            russian = $"Да, в этом слове есть буква «{guess}»!";
+                            Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
+                        }
+                        //If there are no underscores left, the player has won; the game is finished.
+                        else
+                        {
+                            ShowProgress(progress);
+                            Thread.Sleep(2000);
+                            Console.Clear();
+                            VictoryMusic();
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            english = $"{currentPlayer.Name}, congrats, you've won the game!";
+                            latvian = $"{currentPlayer.Name}, urrā, tu uzvarēji!";
+                            russian = $"{currentPlayer.Name}, ура, ты победил!";
+                            Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
+                            Console.ResetColor();
+                            gameFinished = true;
+                            break;
+                        }
                     }
+                    
                     //Otherwise player's incorrect guess counter and hangman image get updated.
                     else
                     {
@@ -213,6 +250,7 @@ namespace Hangman_main
                         //If incorrect guess count < 7, the program plays incorrect guess notification.
                         if (currentPlayer.IncorrectGuessCount < 7)
                         {
+                            Console.Clear();
                             currentPlayer.IncorrectGuess();
                             Console.ForegroundColor = ConsoleColor.Red;
                             if (guess.Length == 1)
@@ -231,6 +269,7 @@ namespace Hangman_main
                         //If incorrect guess count == 7, the program plays loss notification.
                         else if (currentPlayer.IncorrectGuessCount == 7)
                         {
+                            Console.Clear();
                             LossMusic();
                             Console.ForegroundColor = ConsoleColor.Red;
                             //If there are more than 1 player, the program prints a message
@@ -246,9 +285,9 @@ namespace Hangman_main
                             //Otherwise the game is finished.
                             else
                             {
-                                english = $"{currentPlayer.Name}, you've lost, the game is over!";
-                                latvian = $"{currentPlayer.Name}, tu zaudēji, spēle ir beigusies!";
-                                russian = $"{currentPlayer.Name}, ты проиграл, игра закончена!";
+                                english = $"{currentPlayer.Name}, you've lost, the game is over!\nThe secret word was \"{secretWord}\".";
+                                latvian = $"{currentPlayer.Name}, tu zaudēji, spēle ir beigusies!\nTu neuzminēji vārdu \"{secretWord}\".";
+                                russian = $"{currentPlayer.Name}, ты проиграл, игра закончена!\nТы не отгадал слово \"{secretWord}\".";
                                 Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
                                 Console.ResetColor();
                                 gameFinished = true;
@@ -257,6 +296,8 @@ namespace Hangman_main
                         }
                     }
                     Console.ResetColor();
+                    Thread.Sleep(2000);
+                    Console.Clear();
                     //When the move is made the program prints current progress.
                     ShowProgress(progress);
                     //Exit

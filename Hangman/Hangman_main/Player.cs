@@ -19,7 +19,9 @@ namespace Hangman_main
             string message1 = $"Good luck, {Name}!";
             string message2 = $"Veiksmi spēlē, {Name}!";
             string message3 = $"Удачи в игре, {Name}!";
+            Console.ForegroundColor = Color;
             Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
+            Console.ResetColor();
         }
 
         //This method chooses a random color from the ConsoleColor enum
@@ -136,7 +138,6 @@ namespace Hangman_main
             }
             //The last image is printed in player's color.
             PrintHangmanImage(Color);
-            Console.ResetColor();
             Console.Beep(NoteFrequency(Note.D4), NoteDuration(2));
         }
 
@@ -153,9 +154,7 @@ namespace Hangman_main
                     message2 = "0 nepareizu minējumu:";
                     message3 = "0 неверных догадок:";
                     Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
-                    Console.ForegroundColor = ConsoleColor.Red;
                     Hangman = CreateHangmanImage();
-                    Console.ResetColor();
                 }
                 else
                 {
@@ -187,12 +186,10 @@ namespace Hangman_main
                         message3 = $"{IncorrectGuessCount} неверных догадок — игра проиграна!";
                         Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
                     }
-                    Console.ForegroundColor = ConsoleColor.Red;
                     UpdateHangmanImage();
-                    Console.ResetColor();
                 }
                 PrintHangmanImage(ConsoleColor.Red);
-                Thread.Sleep(1500);
+                Thread.Sleep(2000);
                 Console.Clear();
             }
         }

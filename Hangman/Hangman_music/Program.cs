@@ -7,93 +7,170 @@ namespace Hangman_music
     {
         static void Main(string[] args)
         {
+            //The game is on 2
             Console.WriteLine("Enter smth: ");
             Console.ReadLine();
 
-            //The game is on
-            int[] randomnumbers = ArrayWithRandomNumbers(21);
-            int j = 0;
-            for (int i = 0; i < 40; i += 2)
-            {
-                Console.SetCursorPosition(i, j);
-                Console.BackgroundColor = (ConsoleColor)randomnumbers[j];
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("The game is on!");
-                Console.ResetColor();
-                if (i % 4 == 0 || i == 38)
-                {
-                    Thread.Sleep(100);
-                    Console.Clear();
-                }
-                j++;
-            }
-            Console.Beep(NoteFrequency(Note.G4), NoteDuration(4, 1));
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(16, 1));
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(4) + NoteDuration(4) / 2);
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.D5), NoteDuration(16));
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
-            Thread.Sleep(NoteDuration(4));
-            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
             Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
-            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.F5), NoteDuration(4));
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(4));
-            CenteredColoredText("The game is on!", 2, 3, 21);
             Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8));
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8, 1));
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.A4), NoteDuration(4) + NoteDuration(4) / 2);
-            CenteredColoredText("The game is on!", 2, 3, 21);
-            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
-            CenteredColoredText("The game is on!", 2, 3, 21);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.F5), NoteDuration(2, 1));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.A5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.A5sh_B5fl), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.A5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.A5sh_B5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.C6), NoteDuration(2, 1));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4, 1));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(2, 1));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4, 1));
+            Console.Beep(NoteFrequency(Note.F5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(2, 1));
 
 
-            //Pilnais karātavu zīmējums
-            string[,] hangman = CreateHangman();
 
-            //Incorrect guess
-            Console.Write("Enter smth: ");
-            Console.ReadLine();
-            Console.Clear();
-            int[] colornumbers = ArrayWithRandomNumbers(8);
-            for (int i = 0; i < 3; i++)
-            {
-                Console.ForegroundColor = (ConsoleColor)colornumbers[i];
-                PrintHangman(hangman);
-                Console.ResetColor();
-                Console.Beep(NoteFrequency(Note.G4), NoteDuration(8));
-                Console.Clear();
-            }
-            Console.ForegroundColor = (ConsoleColor)colornumbers[3];
-            PrintHangman(hangman);
-            Console.ResetColor();
-            Console.Beep(NoteFrequency(Note.E4), NoteDuration(2));
-            Thread.Sleep(NoteDuration(8));
-            Console.Clear();
-            for (int i = 0; i < 3; i++)
-            {
-                Console.ForegroundColor = (ConsoleColor)colornumbers[i + 4];
-                PrintHangman(hangman);
-                Console.ResetColor();
-                Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
-                Console.Clear();
-            }
-            Console.ForegroundColor = (ConsoleColor)colornumbers[7];
-            PrintHangman(hangman);
-            Console.ResetColor();
-            Console.Beep(NoteFrequency(Note.D4), NoteDuration(2));
+            ////Greeting
+            //Console.WriteLine("Enter smth: ");
+            //Console.ReadLine();
+            //Console.Beep(NoteFrequency(Note.B4), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.E5), NoteDuration(8, 1));
+            //Console.Beep(NoteFrequency(Note.G5), NoteDuration(16));
+            //Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.E5), NoteDuration(4));
+            //Console.Beep(NoteFrequency(Note.B5), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.A5), NoteDuration(4, 1));
+            //Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(4, 1));
+            //Console.Beep(NoteFrequency(Note.E5), NoteDuration(8, 1));
+            //Console.Beep(NoteFrequency(Note.G5), NoteDuration(16));
+            //Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(4));
+            //Console.Beep(NoteFrequency(Note.F5), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.B4), NoteDuration(4, 1));
+            //Console.Beep(NoteFrequency(Note.B4), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.E5), NoteDuration(8, 1));
+            //Console.Beep(NoteFrequency(Note.G5), NoteDuration(16));
+            //Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.E5), NoteDuration(4));
+            //Console.Beep(NoteFrequency(Note.B5), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.D6), NoteDuration(4));
+            //Console.Beep(NoteFrequency(Note.C6sh_D6fl), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.C6), NoteDuration(4));
+            //Console.Beep(NoteFrequency(Note.G5sh_A5fl), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.C6), NoteDuration(8, 1));
+            //Console.Beep(NoteFrequency(Note.B5), NoteDuration(16));
+            //Console.Beep(NoteFrequency(Note.A5sh_B5fl), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(4));
+            //Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            //Console.Beep(NoteFrequency(Note.E5), NoteDuration(4, 1));
+
+            //Console.WriteLine("Enter smth: ");
+            //Console.ReadLine();
+
+            ////The game is on
+            //int[] randomnumbers = ArrayWithRandomNumbers(21);
+            //int j = 0;
+            //for (int i = 0; i < 40; i += 2)
+            //{
+            //    Console.SetCursorPosition(i, j);
+            //    Console.BackgroundColor = (ConsoleColor)randomnumbers[j];
+            //    Console.ForegroundColor = ConsoleColor.Black;
+            //    Console.WriteLine("The game is on!");
+            //    Console.ResetColor();
+            //    if (i % 4 == 0 || i == 38)
+            //    {
+            //        Thread.Sleep(100);
+            //        Console.Clear();
+            //    }
+            //    j++;
+            //}
+            //Console.Beep(NoteFrequency(Note.G4), NoteDuration(4, 1));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(16, 1));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(4) + NoteDuration(4) / 2);
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.D5), NoteDuration(16));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            //Thread.Sleep(NoteDuration(4));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.C5), NoteDuration(4));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8, 1));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.A4), NoteDuration(4) + NoteDuration(4) / 2);
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+            //Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            //CenteredColoredText("The game is on!", 2, 3, 21);
+
+
+            ////Pilnais karātavu zīmējums
+            //string[,] hangman = CreateHangman();
+
+            ////Incorrect guess
+            //Console.Write("Enter smth: ");
+            //Console.ReadLine();
+            //Console.Clear();
+            //int[] colornumbers = ArrayWithRandomNumbers(8);
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.ForegroundColor = (ConsoleColor)colornumbers[i];
+            //    PrintHangman(hangman);
+            //    Console.ResetColor();
+            //    Console.Beep(NoteFrequency(Note.G4), NoteDuration(8));
+            //    Console.Clear();
+            //}
+            //Console.ForegroundColor = (ConsoleColor)colornumbers[3];
+            //PrintHangman(hangman);
+            //Console.ResetColor();
+            //Console.Beep(NoteFrequency(Note.E4), NoteDuration(2));
+            //Thread.Sleep(NoteDuration(8));
+            //Console.Clear();
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    Console.ForegroundColor = (ConsoleColor)colornumbers[i + 4];
+            //    PrintHangman(hangman);
+            //    Console.ResetColor();
+            //    Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+            //    Console.Clear();
+            //}
+            //Console.ForegroundColor = (ConsoleColor)colornumbers[7];
+            //PrintHangman(hangman);
+            //Console.ResetColor();
+            //Console.Beep(NoteFrequency(Note.D4), NoteDuration(2));
 
             //This method calculates note frequecy; parameter: note enum value.
             //f(n) = 440 * 2^((n - 69)/12), where n is note's number in MIDI standard.

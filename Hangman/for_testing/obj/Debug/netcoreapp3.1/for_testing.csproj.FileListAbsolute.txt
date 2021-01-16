@@ -1,0 +1,4 @@
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.AssemblyInfoInputs.cache
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.AssemblyInfo.cs
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.csproj.CoreCompileInputs.cache
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.csprojAssemblyReference.cache

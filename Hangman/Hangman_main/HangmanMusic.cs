@@ -5,6 +5,40 @@ namespace Hangman_main
 {
     class HangmanMusic : HangmanMethods
     {
+        public static void Greeting()
+        {
+            Console.Beep(NoteFrequency(Note.B4), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.E5), NoteDuration(8, 1));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(16));
+            Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.E5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.B5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.A5), NoteDuration(4, 1));
+            Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(4, 1));
+            Console.Beep(NoteFrequency(Note.E5), NoteDuration(8, 1));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(16));
+            Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.F5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.B4), NoteDuration(4, 1));
+            Console.Beep(NoteFrequency(Note.B4), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.E5), NoteDuration(8, 1));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(16));
+            Console.Beep(NoteFrequency(Note.F5sh_G5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.E5), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.B5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D6), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.C6sh_D6fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.C6), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.G5sh_A5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.C6), NoteDuration(8, 1));
+            Console.Beep(NoteFrequency(Note.B5), NoteDuration(16));
+            Console.Beep(NoteFrequency(Note.A5sh_B5fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.E5), NoteDuration(4, 1));
+        }
+        
         public static void TheGameIsOn(int number)
         {
             int[] randomNumbers = ArrayWithRandomNumbers(21);
@@ -25,37 +59,77 @@ namespace Hangman_main
                 }
                 j++;
             }
-            Console.Beep(NoteFrequency(Note.G4), NoteDuration(4, 1));
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(16, 1));
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(4) + NoteDuration(4) / 2);
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8, 1));
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.D5), NoteDuration(16));
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4) + NoteDuration(4) / 2);
-            CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
-            Thread.Sleep(NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
             CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.F5), NoteDuration(4));
             CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(4));
             CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8));
             CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.A4sh_B4fl), NoteDuration(8, 1));
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
             CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.A4), NoteDuration(4) + NoteDuration(4) / 2);
+            Console.Beep(NoteFrequency(Note.F5), NoteDuration(2, 1));
             CenteredTextInColor(text, 3, randomNumbers.Length);
-            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
             CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A5sh_B5fl), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A5), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.A5sh_B5fl), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.C6), NoteDuration(2, 1));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4, 1));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(2, 1));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(4, 1));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.F5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.C5), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
+            Console.Beep(NoteFrequency(Note.D5), NoteDuration(2, 1));
         }
 
         public static void CorrectGuessMusic()

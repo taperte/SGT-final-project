@@ -22,6 +22,7 @@ namespace Hangman_main
             Console.ForegroundColor = Color;
             Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
             Console.ResetColor();
+            Greeting();
         }
 
         //This method chooses a random color from the ConsoleColor enum

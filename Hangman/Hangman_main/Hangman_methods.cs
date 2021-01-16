@@ -151,7 +151,7 @@ namespace Hangman_main
         }
 
         //This method receives a string value, creates a string list and fills it with "_ ".
-        //If there is a hyphen in the string value, the spot in the list 
+        //If there is a hyphen in the string, the spot in the list 
         //with the corresponding index is filled with a hyphen, too.
         public static List<string> CreateProgressList(string someString)
         {
@@ -172,6 +172,22 @@ namespace Hangman_main
                 }
             }
             return someList;
+        }
+
+        //This method updates the progress list.
+        public static void UpdateProgressList(string someString1, string someString2, List<string> someList)
+        {
+            for (int i = 0; i < someString2.Length; i++)
+            {
+                if (someString1 == someString2.Substring(i, 1))
+                {
+                    someList[i] = someString1;
+                    if (i != 0 && someList[i - 1] == "_ ")
+                    {
+                        someList[i - 1] = "_";
+                    }
+                }
+            }
         }
 
         //This method prints the progress list.
@@ -233,7 +249,7 @@ namespace Hangman_main
         public static void Proceed(int number)
         {
             string message1 = "Press any key to proceed: ";
-            string message2 = "Lai turpinātu, nospied jebkuru taustiņu: ";
+            string message2 = "Lai turpinātu, spied jebkuru taustiņu: ";
             string message3 = "Чтобы продолжить, нажми любую клавишу: ";
             Console.Write(SwitchLanguage(number, message1, message2, message3));
             while (true)
@@ -250,6 +266,66 @@ namespace Hangman_main
                 } 
             }
             Console.Clear();
+        }
+
+        //This methods prints the contents of the list with previous guesses.
+        public static void ShowPreviousGuesses(int number, List<string> someList)
+        {
+            int letters = 0;
+            int words = 0;
+            //The program counts letters and words in the list.
+            foreach (var item in someList)
+            {
+                if (item.Length == 1)
+                {
+                    letters++;
+                }
+                if (item.Length > 1)
+                {
+                    words++;
+                }
+            }
+            //If there are any letters, prints them.
+            if (letters != 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(SwitchLanguage(number, "Letters: ", "Burti: ", "Буквы: "));
+                Console.ResetColor();
+                for (int i = 0; i < someList.Count; i++)
+                {
+                    if (someList[i].Length == 1)
+                    {
+                        Console.Write(someList[i] + " ");
+                    }
+                }
+                Console.WriteLine(); 
+            }
+            //If there are any words, prints them.
+            if (words != 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(SwitchLanguage(number, "Words: ", "Vārdi: ", "Слова: "));
+                Console.ResetColor();
+                for (int i = 0; i < someList.Count; i++)
+                {
+                    if (someList[i].Length > 1)
+                    {
+                        Console.Write(someList[i] + " ");
+                    }
+                }
+                Console.WriteLine(); 
+            }
+            //If the list is empty, prints a message.
+            if (someList.Count == 0)
+            {
+                string message1 = "The list of previous guesses is empty.";
+                string message2 = "Minējumu saraksts ir tukšs.";
+                string message3 = "Список предыдущих ходов пуст.";
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
+                Console.ResetColor();
+            }
+            Console.WriteLine();
         }
     }
 }

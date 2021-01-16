@@ -21,6 +21,7 @@ namespace Hangman_main
             int language, level, playerCount;
             string english, latvian, russian;
             bool gameFinished = false;
+            bool anotherGame = true;
 
             //Input and output encoding changed to Unicode, so that Latvian and Russian text
             //would be displayed correctly in the console.
@@ -121,7 +122,7 @@ namespace Hangman_main
             AddPlayers(players, playerCount, language);
 
             //The program chooses secret word from one of the word lists and saves it to a variable.
-            string secretWord = ChooseWordToGuess(ENwords, LVwords, RUwords, language, level);
+            string secretWord = ChooseSecretWord(ENwords, LVwords, RUwords, language, level);
             secretWord = secretWord.ToLower();
 
             //Progress list is created.
@@ -132,12 +133,11 @@ namespace Hangman_main
 
             //The game begins.
             TheGameIsOn(language);
-            Thread.Sleep(1500);
+            Thread.Sleep(2000);
             Console.Clear();
 
             //The program prints the contents of the progress list.
             ShowProgress(progress);
-
             while (!gameFinished)
             {
                 for (int current = 0; current < players.Count;)
@@ -149,8 +149,7 @@ namespace Hangman_main
                     russian = $"{currentPlayer.Name}, твой ход: ";
                     Console.ResetColor();
                     Console.Write(SwitchLanguage(language, english, latvian, russian));
-                    string guess = Console.ReadLine().ToLower();
-
+                    string guess = Console.ReadLine();
                     //If the player enters an empty string, an error message appears.
                     if (string.IsNullOrEmpty(guess))
                     {
@@ -255,7 +254,7 @@ namespace Hangman_main
                             Console.ForegroundColor = ConsoleColor.Red;
                             if (guess.Length == 1)
                             {
-                                english = $"The word contains no letters \"{guess}\"!";
+                                english = $"There is no letter \"{guess}\" in this word!";
                                 latvian = $"Nē, šajā vārdā nav burta \"{guess}\"!";
                                 russian = $"Нет, в этом слове нет буквы «{guess}»!";
                             }
@@ -276,7 +275,7 @@ namespace Hangman_main
                             //and removes the loser from the list of players; the game continues.
                             if (players.Count > 1)
                             {
-                                english = $"{currentPlayer.Name}, your hangman is completed, so sorry to see you go!";
+                                english = $"{currentPlayer.Name}, your hangman is completed. So sorry to see you go!";
                                 latvian = $"{currentPlayer.Name}, tavas karātavas ir pabeigtas. Cik žēl, ka tu mūs pamet!";
                                 russian = $"{currentPlayer.Name}, твоя виселица готова. Как жаль, что ты нас покидаешь!";
                                 Console.WriteLine(SwitchLanguage(language, english, latvian, russian));

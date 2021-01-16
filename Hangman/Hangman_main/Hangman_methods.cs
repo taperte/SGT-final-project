@@ -105,7 +105,7 @@ namespace Hangman_main
         }
 
         //This method chooses the secret word from the word lists.
-        public static string ChooseWordToGuess(List<string> list1, List<string> list2, List<string> list3, int number1, int number2)
+        public static string ChooseSecretWord(List<string> list1, List<string> list2, List<string> list3, int number1, int number2)
         {
             //The program selects the list to choose from according to player's choice of language.
             List<string> listToChooseFrom = new List<string>();

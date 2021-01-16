@@ -8,15 +8,28 @@ namespace calc
     {
         static void Main(string[] args)
         {
-            int Width = Console.LargestWindowWidth;
-            int Height = Console.LargestWindowHeight;
-            for (int i = 1; i < 20; i++)
+            Console.Write("Enter smth: ");
+            while (!Console.KeyAvailable)
             {
-                Console.SetWindowSize(i, i);
-                Thread.Sleep(100);
+                Thread.Sleep(1);
             }
-            Console.SetWindowSize(Width, Height);
+            Console.WriteLine();
+            //parameter intercept (from method description):
+            //Determines whether to display the pressed key in the console window. true to
+            //not display the pressed key; otherwise, false.
+            var key = Console.ReadKey(true);
+            if (key.Key != ConsoleKey.Escape)
+            {
+                Console.Write(key.KeyChar);
+                string newText = Console.ReadLine();
+                string textCombined = key.KeyChar.ToString() + newText;
+                Console.WriteLine($"You just input: '{textCombined}'");
+            }
+            else
+            {
+                string aa = "You pressed ESC";
+                Console.WriteLine(aa);
+            }
         }
-        
     }
 }

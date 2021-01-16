@@ -63,7 +63,7 @@ namespace Hangman_main
                           "\nIf the guess is incorrect, player's hangman image gets updated." +
                           "\nWhen the image is completed, the player looses.";
                 latvian = "Laipni lūgti spēlē \"Karātavas\"!" +
-                          "\n\"Karātavas\" ir vārdu minēšanas spēle. Programma izvēlas vārdu, un spēlētāji cenšas to uzminēt." +
+                          "\n\"Karātavas\" ir vārdu minēšanas spēle. Programma izvēlas vārdu, un spēlētāji mēģina to uzminēt." +
                           "\nTu vari spēlēt viens pats vai ar draugiem (spēle atļauj līdz 11 dalībniekiem)." +
                           "\nVispirms ir jāizvēlas līmenis: 1. līmenis — 4 vai 5 burti;" +
                           "\n2. līmenis — 6 vai 7 burti; 3. līmenis — 8 burti un vairāk." +
@@ -172,9 +172,6 @@ namespace Hangman_main
                 //Progress list is created.
                 List<string> progress = CreateProgressList(secretWord);
 
-                //The player(s) press(es) a key to proceed. 
-                Proceed(language);
-
                 //The game begins.
                 TheGameIsOn(language);
                 Thread.Sleep(2000);
@@ -192,10 +189,12 @@ namespace Hangman_main
                     {
                         Player currentPlayer = players[current];
                         //Current player enters their guess.
-                        english = $"{currentPlayer.Name}, your guess: ";
-                        latvian = $"{currentPlayer.Name}, tavs minējums: ";
-                        russian = $"{currentPlayer.Name}, твой ход: ";
+                        Console.ForegroundColor = currentPlayer.Color;
+                        Console.Write(currentPlayer.Name);
                         Console.ResetColor();
+                        english = ", your guess: ";
+                        latvian = ", tavs minējums: ";
+                        russian = ", твой ход: ";
                         Console.Write(SwitchLanguage(language, english, latvian, russian));
                         string guess = Console.ReadLine();
                         //If the player enters an empty string, an error message appears.

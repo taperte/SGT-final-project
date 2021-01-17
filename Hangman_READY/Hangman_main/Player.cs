@@ -202,9 +202,9 @@ namespace Hangman_main
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
             Console.Clear();
-            Console.BackgroundColor = (ConsoleColor)colorNumbers[10];
             //The last image is printed in player's color.
-            PrintHangmanImage(Color);
+            Console.BackgroundColor = Color;
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(2));
             Console.ResetColor();
         }

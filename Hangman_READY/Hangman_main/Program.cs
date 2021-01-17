@@ -102,7 +102,8 @@ namespace Hangman_main
                           "\nПосле того как игра началась, ты можешь ввести «выйти», чтобы покинуть игру или начать новую." +
                           "\nЧтобы посмотреть предыдущие ходы, введи «показать ходы»." +
                           "\nЧтобы посмотреть свой счёт, введи «показать виселицу»." +
-                          "\nПосле окончания игры ты сможешь выйти или начать новую игру.";
+                          "\nПосле окончания игры ты сможешь выйти или начать новую игру." +
+                          "\nВ игре используется буква «ё».";
                 Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
                 Console.WriteLine();
                 Proceed(language);
@@ -197,6 +198,7 @@ namespace Hangman_main
                         russian = ", твой ход: ";
                         Console.Write(SwitchLanguage(language, english, latvian, russian));
                         string guess = Console.ReadLine();
+                        guess = guess.ToLower();
                         //If the player enters an empty string, an error message appears.
                         if (string.IsNullOrEmpty(guess))
                         {
@@ -254,7 +256,9 @@ namespace Hangman_main
                         //If the player guessed the word, they've won; the game is finished.
                         else if (guess == secretWord)
                         {
-                            ShowProgress(progress);
+                            Console.ForegroundColor = ConsoleColor.Magenta;
+                            Console.WriteLine(secretWord);
+                            Console.ResetColor();
                             Thread.Sleep(2000);
                             Console.Clear();
                             Victory(language);
@@ -274,7 +278,7 @@ namespace Hangman_main
                             //If the updated list still contains underscores, the program plays correct guess notification.
                             if (progress.Contains("_ ") || progress.Contains("_"))
                             {
-                                Thread.Sleep(2000);
+                                Thread.Sleep(1000);
                                 Console.Clear();
                                 CorrectGuess(language);
                                 Console.ForegroundColor = ConsoleColor.Green;
@@ -304,10 +308,11 @@ namespace Hangman_main
                         {
                             currentPlayer.IncorrectGuessCount++;
                             currentPlayer.UpdateHangmanImage();
+                            Thread.Sleep(1000);
+                            Console.Clear();
                             //If incorrect guess count < 7, the program plays incorrect guess notification.
                             if (currentPlayer.IncorrectGuessCount < 7)
                             {
-                                Console.Clear();
                                 currentPlayer.IncorrectGuess();
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 if (guess.Length == 1)
@@ -327,7 +332,6 @@ namespace Hangman_main
                             //If incorrect guess count == 7, the program plays loss notification.
                             else if (currentPlayer.IncorrectGuessCount == 7)
                             {
-                                Console.Clear();
                                 currentPlayer.Loss(language);
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 //If there are more than 1 player, the program prints a message

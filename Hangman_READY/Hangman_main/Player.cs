@@ -203,7 +203,8 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
             Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[10];
-            PrintHangmanImage(ConsoleColor.Black);
+            //The last image is printed in player's color.
+            PrintHangmanImage(Color);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(2));
             Console.ResetColor();
         }
@@ -237,7 +238,7 @@ namespace Hangman_main
                         message2 = $"{IncorrectGuessCount} nepareizi minējumi:";
                         if (IncorrectGuessCount > 1 && IncorrectGuessCount <= 4)
                         {
-                            message3 = $"{IncorrectGuessCount} неверные догадки:";
+                            message3 = $"{IncorrectGuessCount} неверных догадки:";
                         }
                         else
                         {

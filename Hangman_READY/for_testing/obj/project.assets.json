@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\''Dell''\\Desktop\\Hangman\\for_testing\\for_testing.csproj",
+      "projectUniqueName": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\for_testing\\for_testing.csproj",
       "projectName": "for_testing",
-      "projectPath": "C:\\Users\\''Dell''\\Desktop\\Hangman\\for_testing\\for_testing.csproj",
+      "projectPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\for_testing\\for_testing.csproj",
       "packagesPath": "C:\\Users\\''Dell''\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\''Dell''\\Desktop\\Hangman\\for_testing\\obj\\",
+      "outputPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\for_testing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\''Dell''\\AppData\\Roaming\\NuGet\\NuGet.Config",

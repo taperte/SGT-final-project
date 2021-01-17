@@ -237,6 +237,7 @@ namespace Hangman_main
                     Console.Clear();
                 }
             }
+            Console.Clear();
             CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
             CenteredTextInColor(text, 2, randomNumbers.Length);

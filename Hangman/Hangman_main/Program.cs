@@ -348,6 +348,7 @@ namespace Hangman_main
                                     russian = $"{currentPlayer.Name}, ты проиграл, игра закончена!\nТы не отгадал слово «{secretWord}».";
                                     Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
                                     Console.ResetColor();
+                                    Thread.Sleep(2000);
                                     gameFinished = true;
                                 }
                             }

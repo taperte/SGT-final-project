@@ -146,7 +146,7 @@ namespace Hangman_main
         {
             string message1 = "YOU'VE LOST!", message2 = "TU ZAUDĒJI!", message3 = "ТЫ ПРОИГРАЛ!";
             string text = SwitchLanguage(number, message1, message2, message3);
-            int[] colorNumbers = ArrayWithRandomNumbers(11);
+            int[] colorNumbers = ArrayWithRandomNumbers(41);
             int j = 20;
             for (int i = 40; i > 0; i -= 2)
             {
@@ -165,33 +165,43 @@ namespace Hangman_main
             Console.BackgroundColor = (ConsoleColor)colorNumbers[0];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(4));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[1];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(8, 1));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[2];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[3];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(4));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[4];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.C4sh_D4fl), NoteDuration(8, 1));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[5];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.C4), NoteDuration(16));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[6];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.C4), NoteDuration(8, 1));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[7];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[8];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(8, 1));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[9];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
+            Console.Clear();
             Console.BackgroundColor = (ConsoleColor)colorNumbers[10];
             PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(2));

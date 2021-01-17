@@ -248,10 +248,10 @@ namespace Hangman_main
         //This method asks user to input any key and then clears console.
         public static void Proceed(int number)
         {
-            string message1 = "Press any key to proceed: ";
-            string message2 = "Lai turpinātu, spied jebkuru taustiņu: ";
-            string message3 = "Чтобы продолжить, нажми любую клавишу: ";
-            Console.Write(SwitchLanguage(number, message1, message2, message3));
+            string message1 = "Press any key to proceed.";
+            string message2 = "Lai turpinātu, spied jebkuru taustiņu.";
+            string message3 = "Чтобы продолжить, нажми любую клавишу.";
+            Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
             while (true)
             {
                 if (!Console.KeyAvailable)

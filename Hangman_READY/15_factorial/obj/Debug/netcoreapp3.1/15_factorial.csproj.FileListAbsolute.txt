@@ -1,0 +1,13 @@
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\bin\Debug\netcoreapp3.1\15_factorial.exe
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\bin\Debug\netcoreapp3.1\15_factorial.deps.json
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\bin\Debug\netcoreapp3.1\15_factorial.runtimeconfig.json
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\bin\Debug\netcoreapp3.1\15_factorial.runtimeconfig.dev.json
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\bin\Debug\netcoreapp3.1\15_factorial.dll
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\bin\Debug\netcoreapp3.1\15_factorial.pdb
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\obj\Debug\netcoreapp3.1\15_factorial.csprojAssemblyReference.cache
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\obj\Debug\netcoreapp3.1\15_factorial.AssemblyInfoInputs.cache
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\obj\Debug\netcoreapp3.1\15_factorial.AssemblyInfo.cs
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\obj\Debug\netcoreapp3.1\15_factorial.csproj.CoreCompileInputs.cache
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\obj\Debug\netcoreapp3.1\15_factorial.dll
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\obj\Debug\netcoreapp3.1\15_factorial.pdb
+C:\Users\''Dell''\source\repos\Hangman\15_factorial\obj\Debug\netcoreapp3.1\15_factorial.genruntimeconfig.cache

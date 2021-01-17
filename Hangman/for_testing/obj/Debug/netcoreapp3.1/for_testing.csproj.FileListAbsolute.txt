@@ -2,3 +2,12 @@ C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Deb
 C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.AssemblyInfo.cs
 C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.csproj.CoreCompileInputs.cache
 C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.csprojAssemblyReference.cache
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\bin\Debug\netcoreapp3.1\for_testing.exe
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\bin\Debug\netcoreapp3.1\for_testing.deps.json
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\bin\Debug\netcoreapp3.1\for_testing.runtimeconfig.json
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\bin\Debug\netcoreapp3.1\for_testing.runtimeconfig.dev.json
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\bin\Debug\netcoreapp3.1\for_testing.dll
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\bin\Debug\netcoreapp3.1\for_testing.pdb
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.dll
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.pdb
+C:\Users\''Dell''\Documents\GitHub\SGT-final-project\Hangman\for_testing\obj\Debug\netcoreapp3.1\for_testing.genruntimeconfig.cache

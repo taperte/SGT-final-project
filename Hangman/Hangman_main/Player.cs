@@ -142,6 +142,49 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.D4), NoteDuration(2));
         }
 
+        public void Loss(int number)
+        {
+            string message1 = "YOU'VE LOST!", message2 = "TU ZAUDĒJI!", message3 = "ТЫ ПРОИГРАЛ!";
+            string text = SwitchLanguage(number, message1, message2, message3);
+            int[] colorNumbers = ArrayWithRandomNumbers(11);
+            int j = 20;
+            for (int i = 40; i > 0; i -= 2)
+            {
+                Console.SetCursorPosition(i, j);
+                Console.BackgroundColor = (ConsoleColor)colorNumbers[j];
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine(text);
+                Console.ResetColor();
+                if (i % 4 == 0 || i == 2)
+                {
+                    Thread.Sleep(100);
+                    Console.Clear();
+                }
+                j--;
+            }
+            PrintHangmanImage((ConsoleColor)colorNumbers[0]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(4));
+            PrintHangmanImage((ConsoleColor)colorNumbers[1]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(8, 1));
+            PrintHangmanImage((ConsoleColor)colorNumbers[2]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
+            PrintHangmanImage((ConsoleColor)colorNumbers[3]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(4));
+            PrintHangmanImage((ConsoleColor)colorNumbers[4]);
+            Console.Beep(NoteFrequency(Note.C4sh_D4fl), NoteDuration(8, 1));
+            PrintHangmanImage((ConsoleColor)colorNumbers[5]);
+            Console.Beep(NoteFrequency(Note.C4), NoteDuration(16));
+            PrintHangmanImage((ConsoleColor)colorNumbers[6]);
+            Console.Beep(NoteFrequency(Note.C4), NoteDuration(8, 1));
+            PrintHangmanImage((ConsoleColor)colorNumbers[7]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
+            PrintHangmanImage((ConsoleColor)colorNumbers[8]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(8, 1));
+            PrintHangmanImage((ConsoleColor)colorNumbers[9]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
+            PrintHangmanImage((ConsoleColor)colorNumbers[10]);
+            Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(2));
+        }
 
         //This method shows how a hangman image gets updated in the course of the game.
         public void BuildHangmanImage(int number)

@@ -7,27 +7,55 @@ namespace factorial
     {
         static void Main(string[] args)
         {
-
-            int[] randomnumbers = ArrayWithRandomNumbers(21);
-            int j = 0;
-            for (int i = 0; i < 40; i += 2)
+            int[] randomnumbers = ArrayWithRandomNumbers(40);
+            int j = 20;
+            for (int i = 40; i > 0; i -= 2)
             {
                 Console.SetCursorPosition(i, j);
                 Console.BackgroundColor = (ConsoleColor)randomnumbers[j];
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.WriteLine("The game is on!");
                 Console.ResetColor();
-                if (i % 4 == 0 || i == 38)
+                if (i % 4 == 0 || i == 2)
                 {
                     Thread.Sleep(100);
                     Console.Clear();
                 }
-                j++;
+                j--;
             }
-            Console.SetCursorPosition(2, 3);
-            Console.ForegroundColor = (ConsoleColor)randomnumbers[10];
-            CenterText("The game is on!");
-            Console.ResetColor();
+            string[,] sadFace = new string[12, 12];
+            for (int row = 0; row < sadFace.GetLength(0); row++)
+            {
+                for (int column = 0; column < sadFace.GetLength(1); column++)
+                {
+                    if (((row == column || column - row == 8) && row < 5 && column < 5) ||
+                        (row == 0 && (column == 4 || column == 12)) || 
+                        (row == 1 && (column == 3 || column == 11)) ||
+                        (row == 3 && (column == 1 || column == 9)) ||
+                        (row == 4 && (column == 0 || column == 8)) ||
+                        (row == 8 && column > 3 && column < 9) ||
+                        (row == 9 && column > 1 && column < 11) ||
+                        (row == 10 && (column == 1 || column == 2 || column == 10 || column == 11)) ||
+                        (row == 11 && column == 0) || (row == 12 && column == 0) || (row == 11 && column == 12) ||
+                        (row == 12 && column == 12))
+                    {
+                        sadFace[row, column] = "@";
+
+                    }
+                    else
+                    {
+                        sadFace[row, column] = " ";
+                    }
+                }
+            }
+            for (int row = 0; row < sadFace.GetLength(0); row++)
+            {
+                for (int column = 0; column < sadFace.GetLength(1); column++)
+                {
+                    Console.Write(sadFace[row, column]);
+                }
+                Console.WriteLine();
+            }
         }
 
         private static void CenterText(string text)

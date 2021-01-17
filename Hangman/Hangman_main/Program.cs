@@ -328,7 +328,7 @@ namespace Hangman_main
                             else if (currentPlayer.IncorrectGuessCount == 7)
                             {
                                 Console.Clear();
-                                LossMusic();
+                                currentPlayer.Loss(language);
                                 Console.ForegroundColor = ConsoleColor.Red;
                                 //If there are more than 1 player, the program prints a message
                                 //and removes the loser from the list of players; the game continues.

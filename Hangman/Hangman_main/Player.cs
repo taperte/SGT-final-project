@@ -162,28 +162,40 @@ namespace Hangman_main
                 }
                 j--;
             }
-            PrintHangmanImage((ConsoleColor)colorNumbers[0]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[0];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(4));
-            PrintHangmanImage((ConsoleColor)colorNumbers[1]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[1];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(8, 1));
-            PrintHangmanImage((ConsoleColor)colorNumbers[2]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[2];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
-            PrintHangmanImage((ConsoleColor)colorNumbers[3]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[3];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(4));
-            PrintHangmanImage((ConsoleColor)colorNumbers[4]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[4];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.C4sh_D4fl), NoteDuration(8, 1));
-            PrintHangmanImage((ConsoleColor)colorNumbers[5]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[5];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.C4), NoteDuration(16));
-            PrintHangmanImage((ConsoleColor)colorNumbers[6]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[6];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.C4), NoteDuration(8, 1));
-            PrintHangmanImage((ConsoleColor)colorNumbers[7]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[7];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
-            PrintHangmanImage((ConsoleColor)colorNumbers[8]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[8];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(8, 1));
-            PrintHangmanImage((ConsoleColor)colorNumbers[9]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[9];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(16));
-            PrintHangmanImage((ConsoleColor)colorNumbers[10]);
+            Console.BackgroundColor = (ConsoleColor)colorNumbers[10];
+            PrintHangmanImage(ConsoleColor.Black);
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(2));
+            Console.ResetColor();
         }
 
         //This method shows how a hangman image gets updated in the course of the game.

@@ -7,22 +7,27 @@ namespace factorial
     {
         static void Main(string[] args)
         {
-            int[] randomnumbers = ArrayWithRandomNumbers(40);
-            int j = 20;
-            for (int i = 40; i > 0; i -= 2)
+            int[] randomnumbers = ArrayWithRandomNumbers(41);
+            int j = 40;
+            string text = "Correct guess!";
+            for (int i = 0; i < 40; i++)
             {
-                Console.SetCursorPosition(i, j);
-                Console.BackgroundColor = (ConsoleColor)randomnumbers[j];
+                Console.SetCursorPosition(i, j / 2);
+                Console.BackgroundColor = (ConsoleColor)randomnumbers[i];
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("The game is on!");
+                Console.WriteLine(text);
                 Console.ResetColor();
-                if (i % 4 == 0 || i == 2)
-                {
-                    Thread.Sleep(100);
-                    Console.Clear();
-                }
+                Thread.Sleep(50);
+                Console.Clear();
+                //if (i % 4 == 0)
+                //{
+                //    Thread.Sleep(100);
+                //    Console.Clear();
+                //}
                 j--;
             }
+
+
             string[,] sadFace = new string[12, 12];
             for (int row = 0; row < sadFace.GetLength(0); row++)
             {

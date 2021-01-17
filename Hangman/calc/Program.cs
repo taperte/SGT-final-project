@@ -30,6 +30,23 @@ namespace calc
                 string aa = "You pressed ESC";
                 Console.WriteLine(aa);
             }
+
+            int[] randomnumbers = ArrayWithRandomNumbers(40);
+            int j = 20;
+            for (int i = 40; i > 0; i -= 2)
+            {
+                Console.SetCursorPosition(i, j);
+                Console.BackgroundColor = (ConsoleColor)randomnumbers[j];
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine("The game is on!");
+                Console.ResetColor();
+                if (i % 4 == 0 || i == 2)
+                {
+                    Thread.Sleep(100);
+                    Console.Clear();
+                }
+                j--;
+            }
         }
     }
 }

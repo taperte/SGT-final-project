@@ -257,7 +257,7 @@ namespace Hangman_main
                             ShowProgress(progress);
                             Thread.Sleep(2000);
                             Console.Clear();
-                            VictoryMusic();
+                            Victory(language);
                             Console.ForegroundColor = ConsoleColor.Green;
                             english = $"{currentPlayer.Name}, congrats, you've won the game!";
                             latvian = $"{currentPlayer.Name}, urrā, tu uzvarēji!";
@@ -276,7 +276,7 @@ namespace Hangman_main
                             {
                                 Thread.Sleep(2000);
                                 Console.Clear();
-                                CorrectGuessMusic();
+                                CorrectGuess(language);
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 english = $"Congrats, \"{guess}\" is a correct guess!";
                                 latvian = $"Jā, šajā vārdā ir burts \"{guess}\"!";
@@ -289,7 +289,7 @@ namespace Hangman_main
                                 ShowProgress(progress);
                                 Thread.Sleep(2000);
                                 Console.Clear();
-                                VictoryMusic();
+                                Victory(language);
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 english = $"{currentPlayer.Name}, congrats, you've won the game!";
                                 latvian = $"{currentPlayer.Name}, urrā, tu uzvarēji!";

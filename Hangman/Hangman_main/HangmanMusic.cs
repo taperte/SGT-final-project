@@ -132,28 +132,60 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.D5), NoteDuration(2, 1));
         }
 
-        public static void CorrectGuessMusic()
+        public static void CorrectGuess(int number)
         {
+            int[] randomNumbers = ArrayWithRandomNumbers(41);
+            int j = 40;
+            string message1 = "Correct guess!", message2 = "Tu uzminēji!", message3 = "Верная догадка!";
+            string text = SwitchLanguage(number, message1, message2, message3);
+            for (int i = 0; i < 40; i++)
+            {
+                Console.SetCursorPosition(i, j / 2);
+                Console.BackgroundColor = (ConsoleColor)randomNumbers[i];
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine(text);
+                Console.ResetColor();
+                Thread.Sleep(50);
+                Console.Clear();
+                j--;
+            }
             for (int i = 0; i < 3; i++)
             {
+                CenteredTextInColor(text, 3, randomNumbers.Length);
                 Console.Beep(NoteFrequency(Note.G3), NoteDuration(8));
             }
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C4), NoteDuration(2));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.E4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(2));
             Thread.Sleep(NoteDuration(2));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.E4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(2));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.E4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+            CenteredTextInColor(text, 3, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D4), NoteDuration());
         }
 
@@ -187,51 +219,101 @@ namespace Hangman_main
             Console.Beep(NoteFrequency(Note.A3sh_B3fl), NoteDuration(2));
         }
 
-        public static void VictoryMusic()
+        public static void Victory(int number)
         {
+            int[] randomNumbers = ArrayWithRandomNumbers(50);
+            string message1 = "VICTORY!", message2 = "UZVARA!", message3 = "ПОБЕДА!";
+            string text = SwitchLanguage(number, message1, message2, message3);
+            for (int i = 20; i > 0; i -= 1)
+            {
+                Console.SetCursorPosition((Console.WindowWidth - text.Length) / 2, i);
+                Console.BackgroundColor = (ConsoleColor)randomNumbers[i];
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine(text);
+                Console.ResetColor();
+                if (i % 2 == 0)
+                {
+                    Thread.Sleep(100);
+                    Console.Clear();
+                }
+            }
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(2));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5), NoteDuration(4, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(16));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.F5), NoteDuration(16));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(2));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Thread.Sleep(NoteDuration(4));
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(4, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G5), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.F5), NoteDuration(2, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Thread.Sleep(NoteDuration(8) * 5);
             Thread.Sleep(NoteDuration(4));
-
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(4, 1));
             Thread.Sleep(NoteDuration(8) * 2);
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(16));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G5), NoteDuration(8, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(16));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C6), NoteDuration(2));
             Thread.Sleep(NoteDuration(8) * 4);
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(4));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.D5), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G5), NoteDuration(4, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Thread.Sleep(NoteDuration(8));
             Thread.Sleep(NoteDuration(4));
             Console.Beep(NoteFrequency(Note.D5sh_E5fl), NoteDuration(16));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(16));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
             Thread.Sleep(NoteDuration(8));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(8, 1));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(16));
+            CenteredTextInColor(text, 2, randomNumbers.Length);
             Console.Beep(NoteFrequency(Note.C5), NoteDuration(2, 1));
         }
 

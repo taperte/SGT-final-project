@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lost_animated", "Lost_animated\Lost_animated.csproj", "{1D60E589-7FA4-4263-995E-1A0B6C1165AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lost_win_animations_vol1", "lost_win_animations_vol1\lost_win_animations_vol1.csproj", "{DD733EE2-4A3F-4228-888B-F3E8A2D22E24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D60E589-7FA4-4263-995E-1A0B6C1165AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D60E589-7FA4-4263-995E-1A0B6C1165AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D60E589-7FA4-4263-995E-1A0B6C1165AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D60E589-7FA4-4263-995E-1A0B6C1165AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD733EE2-4A3F-4228-888B-F3E8A2D22E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD733EE2-4A3F-4228-888B-F3E8A2D22E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD733EE2-4A3F-4228-888B-F3E8A2D22E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD733EE2-4A3F-4228-888B-F3E8A2D22E24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A24B6D7-ADCF-43A7-92A4-703D9E9D306B}
+	EndGlobalSection
+EndGlobal

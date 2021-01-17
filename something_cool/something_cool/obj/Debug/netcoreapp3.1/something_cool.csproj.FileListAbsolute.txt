@@ -1,0 +1,13 @@
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\bin\Debug\netcoreapp3.1\something_cool.exe
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\bin\Debug\netcoreapp3.1\something_cool.deps.json
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\bin\Debug\netcoreapp3.1\something_cool.runtimeconfig.json
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\bin\Debug\netcoreapp3.1\something_cool.runtimeconfig.dev.json
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\bin\Debug\netcoreapp3.1\something_cool.dll
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\bin\Debug\netcoreapp3.1\something_cool.pdb
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\obj\Debug\netcoreapp3.1\something_cool.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\obj\Debug\netcoreapp3.1\something_cool.AssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\obj\Debug\netcoreapp3.1\something_cool.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\obj\Debug\netcoreapp3.1\something_cool.dll
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\obj\Debug\netcoreapp3.1\something_cool.pdb
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\obj\Debug\netcoreapp3.1\something_cool.genruntimeconfig.cache
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\something_cool\obj\Debug\netcoreapp3.1\something_cool.csprojAssemblyReference.cache

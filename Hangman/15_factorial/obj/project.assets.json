@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\''Dell''\\.nuget\\packages\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman\\15_factorial\\factorial.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\Documents\\GitHub\\SGT-final-project\\Hangman\\15_factorial\\factorial.csproj",
       "projectName": "factorial",
-      "projectPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman\\15_factorial\\factorial.csproj",
-      "packagesPath": "C:\\Users\\''Dell''\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman\\15_factorial\\obj\\",
+      "projectPath": "C:\\Users\\Asus\\Documents\\GitHub\\SGT-final-project\\Hangman\\15_factorial\\factorial.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Asus\\Documents\\GitHub\\SGT-final-project\\Hangman\\15_factorial\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\''Dell''\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

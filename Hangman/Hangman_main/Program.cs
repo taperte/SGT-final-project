@@ -12,9 +12,9 @@ namespace Hangman_main
         {
             //Title in the console title bar set to "Hangman".
             Console.Title = "Hangman";
-            List<string> ENwords = File.ReadLines("C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\WordListEN_cleaned.txt").ToList();
-            List<string> LVwords = File.ReadLines("C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\WordListLV_cleaned.txt").ToList();
-            List<string> RUwords = File.ReadLines("C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\WordListRU_cleaned.txt").ToList();
+            List<string> ENwords = File.ReadLines("C:\\Users\\Asus\\Desktop\\wordList\\WordListEN_cleaned.xlsx").ToList();
+            List<string> LVwords = File.ReadLines("C:\\Users\\Asus\\Desktop\\wordList\\WordListLV_cleaned.xlsx").ToList();
+            List<string> RUwords = File.ReadLines("C:\\Users\\Asus\\Desktop\\wordList\\WordListRU_cleaned.xlsx").ToList();
             List<Player> players = new List<Player>();
             List<string> previousGuesses = new List<string>();
             int language, level, playerCount;

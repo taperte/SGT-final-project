@@ -1,0 +1,13 @@
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\bin\Debug\netcoreapp3.1\method_for_guessList.exe
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\bin\Debug\netcoreapp3.1\method_for_guessList.deps.json
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\bin\Debug\netcoreapp3.1\method_for_guessList.runtimeconfig.json
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\bin\Debug\netcoreapp3.1\method_for_guessList.runtimeconfig.dev.json
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\bin\Debug\netcoreapp3.1\method_for_guessList.dll
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\bin\Debug\netcoreapp3.1\method_for_guessList.pdb
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\obj\Debug\netcoreapp3.1\method_for_guessList.csprojAssemblyReference.cache
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\obj\Debug\netcoreapp3.1\method_for_guessList.AssemblyInfoInputs.cache
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\obj\Debug\netcoreapp3.1\method_for_guessList.AssemblyInfo.cs
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\obj\Debug\netcoreapp3.1\method_for_guessList.csproj.CoreCompileInputs.cache
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\obj\Debug\netcoreapp3.1\method_for_guessList.dll
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\obj\Debug\netcoreapp3.1\method_for_guessList.pdb
+C:\Users\Asus\Documents\GitHub\SGT-final-project\something_cool\Rainbow\obj\Debug\netcoreapp3.1\method_for_guessList.genruntimeconfig.cache

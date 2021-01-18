@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_main\\Hangman_main.csproj",
+      "projectUniqueName": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_main\\Hangman_main.csproj",
       "projectName": "Hangman_main",
-      "projectPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_main\\Hangman_main.csproj",
+      "projectPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_main\\Hangman_main.csproj",
       "packagesPath": "C:\\Users\\''Dell''\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_main\\obj\\",
+      "outputPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_main\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\''Dell''\\AppData\\Roaming\\NuGet\\NuGet.Config",

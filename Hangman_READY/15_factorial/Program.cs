@@ -63,9 +63,9 @@ namespace factorial
             }
         }
 
-        private static void CenterText(string text)
+        private static void CenterText(string text, int number)
         {
-            Console.Write(new string(' ', (Console.WindowWidth - text.Length) / 2));
+            Console.SetCursorPosition((Console.WindowWidth - text.Length) / 2, number);
             Console.WriteLine(text);
         }
 

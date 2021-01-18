@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\calc\\calc.csproj",
+      "projectUniqueName": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\calc\\calc.csproj",
       "projectName": "calc",
-      "projectPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\calc\\calc.csproj",
+      "projectPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\calc\\calc.csproj",
       "packagesPath": "C:\\Users\\''Dell''\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\calc\\obj\\",
+      "outputPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\calc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\''Dell''\\AppData\\Roaming\\NuGet\\NuGet.Config",

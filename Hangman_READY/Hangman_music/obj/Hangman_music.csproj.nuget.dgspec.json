@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj": {}
+    "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj": {}
   },
   "projects": {
-    "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj": {
+    "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj",
+        "projectUniqueName": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj",
         "projectName": "Hangman_music",
-        "projectPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj",
+        "projectPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_music\\Hangman_music.csproj",
         "packagesPath": "C:\\Users\\''Dell''\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman_music\\obj\\",
+        "outputPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman_music\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\''Dell''\\AppData\\Roaming\\NuGet\\NuGet.Config",

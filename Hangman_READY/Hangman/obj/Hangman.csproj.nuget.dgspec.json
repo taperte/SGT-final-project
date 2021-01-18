@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman\\Hangman.csproj": {}
+    "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman\\Hangman.csproj": {}
   },
   "projects": {
-    "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman\\Hangman.csproj": {
+    "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman\\Hangman.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman\\Hangman.csproj",
+        "projectUniqueName": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman\\Hangman.csproj",
         "projectName": "Hangman",
-        "projectPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman\\Hangman.csproj",
+        "projectPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman\\Hangman.csproj",
         "packagesPath": "C:\\Users\\''Dell''\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\''Dell''\\Desktop\\SGT_final_project\\Hangman_READY\\Hangman\\obj\\",
+        "outputPath": "C:\\Users\\''Dell''\\Documents\\GitHub\\SGT-final-project\\Hangman_READY\\Hangman\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\''Dell''\\AppData\\Roaming\\NuGet\\NuGet.Config",

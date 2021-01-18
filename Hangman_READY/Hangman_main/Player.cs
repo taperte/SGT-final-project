@@ -32,7 +32,7 @@ namespace Hangman_main
             int repititions = 0;
             while (true)
             {
-                //The program generates a random number from 2 to 14 (no, black, dark blue or white color).
+                //The program generates a random number from 2 to 14 (no black, dark blue or white color).
                 Random rand = new Random();
                 int randomNumber = rand.Next(2, 15);
                 //If it equals the index of gray or dark gray the program exits current loop iteration.
@@ -41,7 +41,7 @@ namespace Hangman_main
                     continue;
                 }
                 //When a proper number is generated, the program checks
-                //whether the corresponding color was assiged to a previous player already.
+                //whether the corresponding color was assiged to previous players already.
                 for (int i = 0; i < players.Count; i++)
                 {
                     //If random number equals the index of an existing color from player list,

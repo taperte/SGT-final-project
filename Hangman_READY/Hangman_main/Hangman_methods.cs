@@ -327,5 +327,40 @@ namespace Hangman_main
             }
             Console.WriteLine();
         }
+
+        //This method displays the list of keywords for extra functionality.
+        public static void ShowKeywords(int number, string someString1, string someString2, string someString3)
+        {
+            string message1 = "Useful keywords:";
+            string message2 = "Noderīgi atslēgvārdi:";
+            string message3 = "Полезные фразы:";
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(SwitchLanguage(number, message1, message2, message3));
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(someString1 + " ");
+            Console.ResetColor();
+            message1 = "— exit the game;";
+            message2 = "— iziet no spēles;";
+            message3 = "— выйти из игры;";
+            Console.Write(SwitchLanguage(number, message1, message2, message3));
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(someString2 + " ");
+            Console.ResetColor();
+            message1 = "— see previous guesses;";
+            message2 = "— apskatīties iepriekšējos minējumus;";
+            message3 = "— посмотреть предыдущие ходы;";
+            Console.Write(SwitchLanguage(number, message1, message2, message3));
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(someString3 + " ");
+            Console.ResetColor();
+            message1 = "— see current player's score.";
+            message2 = "— apskatīties pašreizējā spēlētāja karātavas.";
+            message3 = "— посмотреть счёт действующего игрока.";
+            Console.Write(SwitchLanguage(number, message1, message2, message3));
+            Console.WriteLine();
+            Console.WriteLine();
+        }
     }
 }

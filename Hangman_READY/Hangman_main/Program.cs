@@ -92,16 +92,19 @@ namespace Hangman_main
                           "\nOnce the game has started, you can enter \"out\" to either exit the game or start a new one." +
                           "\nTo see the list of previous guesses, enter \"show guesses\"." +
                           "\nTo see your score, enter \"show hangman\"." +
+                          "\nTo display the list of these kewords during the game, press ENTER." +
                           "\nWhen the game is finished, you can either exit or start a new game.";
                 latvian = "Uzvar spēlētājs, kurš ir uzminējis vārdu vai pareizi ievadījis vārda pēdējo burtu." +
                           "\nKad spēle ir sākusies, tu vari ievadīt \"iziet\", lai pamestu spēli pavisam vai sāktu jaunu spēli." +
                           "\nLai redzētu iepriekšējos minējumus, ievadi \"parādīt minējumus\"." +
                           "\nLai aplūkotu savu karātavu attēlu, ievadi \"parādīt karātavas\"." +
+                          "\nLai apskatītos atslēgfrāžu sarakstu spēles laikā, spied ENTER. " +
                           "\nKad spēle ir beigusies, tu vari iziet no spēles pavisam vai uzsākt jaunu.";
                 russian = "Побеждает игрок, который правильно угадывает слово или последнюю букву." +
                           "\nПосле того как игра началась, ты можешь ввести «выйти», чтобы покинуть игру или начать новую." +
                           "\nЧтобы посмотреть предыдущие ходы, введи «показать ходы»." +
                           "\nЧтобы посмотреть свой счёт, введи «показать виселицу»." +
+                          "\nЧтобы посмотреть список этих фраз во время игры, нажми ENTER." +
                           "\nПосле окончания игры ты сможешь выйти или начать новую игру." +
                           "\nВ игре используется буква «ё».";
                 Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
@@ -199,18 +202,16 @@ namespace Hangman_main
                         Console.Write(SwitchLanguage(language, english, latvian, russian));
                         string guess = Console.ReadLine();
                         guess = guess.ToLower();
-                        //If the player enters an empty string, an error message appears.
+                        //If the player enters an empty string, the program displays 
+                        //keywords for extra functionality.
                         if (string.IsNullOrEmpty(guess))
                         {
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            english = "Invalid input! Try again";
-                            latvian = "Kļūda! Mēģini vēlreiz!";
-                            russian = "Ошибка! Попробуй ещё раз!";
-                            Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
+                            Console.WriteLine();
+                            ShowKeywords(language, exit, showGuesses, showScore);
                             continue;
                         }
-                        //If player's input is longer than one character, differs from the length 
-                        //of the secret word, another error message appears.
+                        //If player's input is longer than one character or differs from the length 
+                        //of the secret word and isn't one of the keywords/phrases, another error message appears.
                         if (guess.Length != 1 && guess.Length != secretWord.Length &&
                             guess != exit && guess != showGuesses && guess != showScore)
                         {
@@ -297,7 +298,7 @@ namespace Hangman_main
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 english = $"{currentPlayer.Name}, congrats, you've won the game!";
                                 latvian = $"{currentPlayer.Name}, urrā, tu uzvarēji!";
-                                russian = $"{currentPlayer.Name}, ура, ты победил!";
+                                russian = $"{currentPlayer.Name}, ура, победа!";
                                 Console.WriteLine(SwitchLanguage(language, english, latvian, russian));
                                 Console.ResetColor();
                                 gameFinished = true;
@@ -387,6 +388,8 @@ namespace Hangman_main
                         }
                         //When the move is made the program prints current progress.
                         ShowProgress(progress);
+                        //The counter from the for loop moved to the bottom
+                        //so that it increases only after a full loop iteration.
                         current++;
                     }
                 } 

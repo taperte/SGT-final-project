@@ -27,7 +27,7 @@ namespace Hangman_music
             }
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(2, 1));
             Console.Beep(NoteFrequency(Note.C4), NoteDuration(2, 1));
-            Console.Beep(NoteFrequency(Note.C4), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.D4sh_E4fl), NoteDuration(8));
             Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
             Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
             Console.Beep(NoteFrequency(Note.C4), NoteDuration(2));

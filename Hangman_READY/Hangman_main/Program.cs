@@ -64,7 +64,7 @@ namespace Hangman_main
                           "\nWhen the image is completed, the player looses.";
                 latvian = "Laipni lūgti spēlē \"Karātavas\"!" +
                           "\n\"Karātavas\" ir vārdu minēšanas spēle. Programma izvēlas vārdu, un spēlētāji mēģina to uzminēt." +
-                          "\nTu vari spēlēt viens pats vai ar draugiem (spēle atļauj līdz 11 dalībniekiem)." +
+                          "\nTu vari spēlēt viens pats vai ar draugiem (spēlē var būt līdz 11 dalībniekiem)." +
                           "\nVispirms ir jāizvēlas līmenis: 1. līmenis — 4 vai 5 burti;" +
                           "\n2. līmenis — 6 vai 7 burti; 3. līmenis — 8 burti un vairāk." +
                           "\nTad ir jāievada spēlētāju skaits un viņu vārdi." +

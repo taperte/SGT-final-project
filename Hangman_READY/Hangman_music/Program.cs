@@ -7,6 +7,34 @@ namespace Hangman_music
     {
         static void Main(string[] args)
         {
+            //The GoT theme
+            Console.WriteLine("Enter smth: ");
+            Console.ReadLine();
+
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
+                Console.Beep(NoteFrequency(Note.C4), NoteDuration(4));
+                Console.Beep(NoteFrequency(Note.D4sh_E4fl), NoteDuration(8));
+                Console.Beep(NoteFrequency(Note.F4), NoteDuration(8)); 
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                Console.Beep(NoteFrequency(Note.G4), NoteDuration(4));
+                Console.Beep(NoteFrequency(Note.C4), NoteDuration(4));
+                Console.Beep(NoteFrequency(Note.E4), NoteDuration(8));
+                Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+            }
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2, 1));
+            Console.Beep(NoteFrequency(Note.C4), NoteDuration(2, 1));
+            Console.Beep(NoteFrequency(Note.C4), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.G4), NoteDuration(2));
+            Console.Beep(NoteFrequency(Note.C4), NoteDuration(2));
+            Console.Beep(NoteFrequency(Note.D4sh_E4fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+
+
             //The game is on 2
             Console.WriteLine("Enter smth: ");
             Console.ReadLine();

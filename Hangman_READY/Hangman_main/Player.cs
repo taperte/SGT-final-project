@@ -238,7 +238,7 @@ namespace Hangman_main
                         message2 = $"{IncorrectGuessCount} nepareizi minējumi:";
                         if (IncorrectGuessCount > 1 && IncorrectGuessCount <= 4)
                         {
-                            message3 = $"{IncorrectGuessCount} неверных догадки:";
+                            message3 = $"{IncorrectGuessCount} неверные догадки:";
                         }
                         else
                         {

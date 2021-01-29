@@ -7,6 +7,16 @@ namespace Hangman_music
     {
         static void Main(string[] args)
         {
+            //Doctor Who
+            Console.WriteLine("Enter smth: ");
+            Console.ReadLine();
+
+            Console.Beep(NoteFrequency(Note.B4), NoteDuration(4, 1));
+            Console.Beep(NoteFrequency(Note.C4), NoteDuration(4));
+            Console.Beep(NoteFrequency(Note.D4sh_E4fl), NoteDuration(8));
+            Console.Beep(NoteFrequency(Note.F4), NoteDuration(8));
+
+
             //The GoT theme
             Console.WriteLine("Enter smth: ");
             Console.ReadLine();
